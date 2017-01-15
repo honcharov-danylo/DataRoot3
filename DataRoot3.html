@@ -11790,6 +11790,10 @@ Sequential minimal optimization:
 <li>http://cs229.stanford.edu/notes/cs229-notes3.pdf</li>
 <li>http://mechanoid.kiev.ua/ml-svm.html</li>
 <li>https://github.com/LasseRegin/SVM-w-SMO</li></ul></figure>
+<figure>
+Neural networks:
+<ul><li>https://blog.dbrgn.ch/2013/3/26/perceptrons-in-python/</li>
+<li>https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU</li></ul></figure>
 </details>
 </div>
 </div>
@@ -11810,14 +11814,17 @@ Sequential minimal optimization:
 &lt;/blockquote&gt;
 For some reasons I chose the project 4 from the projects list (projects list and tasks can be found at <a href="https://docs.google.com/document/d/1-Xz8Drk2NvDC4-jctFq19cCkAl0qSns8KPoYAZTSofI/edit">https://docs.google.com/document/d/1-Xz8Drk2NvDC4-jctFq19cCkAl0qSns8KPoYAZTSofI/edit</a> ). <br> The project problem  - <b> Gender Recognition by Voice. </b> <pr> Dataset was used from <a href="https://www.kaggle.com/primaryobjects/voicegender">https://www.kaggle.com/primaryobjects/voicegender</a>.
 <br><br></p>
-<figure>
-So, content of this IPython Notebook:
-<ul><li><a href=#explore>1. Exploring the data!</a></li>
-<li><a href=#prepare>2.0. Preparing data.</a></li>
-<li><a href=#first>2.1. Choosing and implementing first model (logistic regression) Adjusting parameters.</a></li>
-<li><a href=#second>2.2. Choosing and implementing second model (svm). Playing with parameters.</a></li> 
-</ul>
-</figure>
+<p><figure>
+So, content of this IPython Notebook:</p>
+<p><ul><li><a href=#explore>1. Exploring the data!</a></li></p>
+<p><li><a href=#prepare>2.0. Preparing data.</a></li></p>
+<p><li><a href=#first>2.1. Choosing and implementing first model (logistic regression) Adjusting parameters.</a></li></p>
+<p><li><a href=#second>2.2. Choosing and implementing second model (svm). Playing with parameters.</a></li></p>
+<p><li><a href=#conclusions>3. Conslusions. Ways to improve result</a></li>
+&lt;/ul&gt;
+&lt;/figure&gt;
+<br></p>
+<hr color="black">
 </div>
 </div>
 </div>
@@ -11869,7 +11876,7 @@ Gender Recognition by Voice and Speech Analysis</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -20524,10 +20531,10 @@ DMIIAIMwAsAgjAAwCCMADMIIAIMwAsAgjAAwCCMADMIIAMMTYNA6RoNMGxoAAAAASUVORK5CYII=
 
 
 
-<div id="6d68069d-ed47-4dd8-a1f3-8e48b78b3f6a"></div>
+<div id="6e1e854c-80ad-487a-bdbb-0ba88dd970d0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6d68069d-ed47-4dd8-a1f3-8e48b78b3f6a');
+var element = $('#6e1e854c-80ad-487a-bdbb-0ba88dd970d0');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -21308,7 +21315,7 @@ if (IPython.notebook.kernel != null) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Okay, we can assume possible correlation between dfrange and maxdom features, between kurt and skew, between meanfreq and centroid and so on.</p>
+<p>Okay, we can assume possible correlation between dfrange and maxdom features, between kurt and skew, between meanfreq and centroid and so on. <hr></p>
 
 </div>
 </div>
@@ -21439,7 +21446,7 @@ Length of test data: 317
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.00437994567e-16
+<pre>-3.17139821555e-17
 1.0
 </pre>
 </div>
@@ -22247,7 +22254,7 @@ What other model should I choose? I'm going to use svm model.<br> Why? There is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">svm</span>
@@ -22278,10 +22285,10 @@ What other model should I choose? I'm going to use svm model.<br> Why? There is 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Default kernel (RBF) result: 0.984227129338
-Linear kernel result: 0.97476340694
-Poly kernel result: 0.971608832808
-Sigmoid kernel result: 0.851735015773
+<pre>Default kernel (RBF) result: 0.990536277603
+Linear kernel result: 0.977917981073
+Poly kernel result: 0.958990536278
+Sigmoid kernel result: 0.798107255521
 </pre>
 </div>
 </div>
@@ -22370,7 +22377,7 @@ I propose create special class for this purpose. Something like this:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">cross_val_score</span> <span class="c1">#importing cross-validation</span>
@@ -25870,19 +25877,22 @@ YII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="k">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">classification_report</span>
 <span class="n">svm_model</span><span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">()</span>
 <span class="n">param_grid</span><span class="o">=</span><span class="p">{</span>
-    <span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)),</span><span class="s2">&quot;kernel&quot;</span><span class="p">:[</span><span class="s2">&quot;linear&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)),</span><span class="s2">&quot;kernel&quot;</span><span class="p">:[</span><span class="s2">&quot;rbf&quot;</span><span class="p">],</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.02</span><span class="p">)),</span>
-    <span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span><span class="s2">&quot;kernel&quot;</span><span class="p">:[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span><span class="s2">&quot;degree&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)),</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.03</span><span class="p">)),</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)),</span><span class="s2">&quot;kernel&quot;</span><span class="p">:[</span><span class="s2">&quot;linear&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)),</span><span class="s2">&quot;kernel&quot;</span><span class="p">:[</span><span class="s2">&quot;rbf&quot;</span><span class="p">],</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.02</span><span class="p">)),</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span><span class="s2">&quot;kernel&quot;</span><span class="p">:[</span><span class="s2">&quot;poly&quot;</span><span class="p">],</span><span class="s2">&quot;degree&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)),</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.03</span><span class="p">)),</span>
 <span class="p">}</span>
-<span class="n">best_svm</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">svm_model</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>    
-<span class="n">scores</span><span class="o">=</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">best_svm</span><span class="p">,</span><span class="n">data_x</span><span class="p">,</span><span class="n">data_y</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best svm mean&quot;</span><span class="p">,</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="n">best_svm</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">svm_model</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">best_svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data_x</span><span class="p">,</span><span class="n">train_data_y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">best_svm</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">best_svm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_data_x</span><span class="p">,</span><span class="n">test_data_y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">test_data_y</span><span class="p">,</span><span class="n">best_svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data_x</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -25894,164 +25904,17 @@ YII=
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-63-6d480fc5783d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> }
-<span class="ansi-green-intense-fg ansi-bold">      8</span> best_svm <span class="ansi-blue-fg">=</span> GridSearchCV<span class="ansi-blue-fg">(</span>svm_model<span class="ansi-blue-fg">,</span> param_grid<span class="ansi-blue-fg">,</span>cv<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">7</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 9</span><span class="ansi-red-fg"> </span>scores<span class="ansi-blue-fg">=</span>cross_val_score<span class="ansi-blue-fg">(</span>best_svm<span class="ansi-blue-fg">,</span>data_x<span class="ansi-blue-fg">,</span>data_y<span class="ansi-blue-fg">,</span>cv<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">7</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Best svm mean&#34;</span><span class="ansi-blue-fg">,</span>scores<span class="ansi-blue-fg">.</span>mean<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;C&#39;: 1.1000000000000001, &#39;degree&#39;: 1.0, &#39;gamma&#39;: 0.151, &#39;kernel&#39;: &#39;poly&#39;}
+0.981072555205
+             precision    recall  f1-score   support
 
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/model_selection/_validation.py</span> in <span class="ansi-cyan-fg">cross_val_score</span><span class="ansi-blue-fg">(estimator, X, y, groups, scoring, cv, n_jobs, verbose, fit_params, pre_dispatch)</span>
-<span class="ansi-green-intense-fg ansi-bold">    138</span>                                               train<span class="ansi-blue-fg">,</span> test<span class="ansi-blue-fg">,</span> verbose<span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    139</span>                                               fit_params)
-<span class="ansi-green-fg">--&gt; 140</span><span class="ansi-red-fg">                       for train, test in cv_iter)
-</span><span class="ansi-green-intense-fg ansi-bold">    141</span>     <span class="ansi-green-fg">return</span> np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span>scores<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    142</span> 
+          0       1.00      0.96      0.98       166
+          1       0.96      1.00      0.98       151
 
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, iterable)</span>
-<span class="ansi-green-intense-fg ansi-bold">    756</span>             <span class="ansi-red-fg"># was dispatched. In particular this covers the edge</span>
-<span class="ansi-green-intense-fg ansi-bold">    757</span>             <span class="ansi-red-fg"># case of Parallel used with an exhausted iterator.</span>
-<span class="ansi-green-fg">--&gt; 758</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">while</span> self<span class="ansi-blue-fg">.</span>dispatch_one_batch<span class="ansi-blue-fg">(</span>iterator<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    759</span>                 self<span class="ansi-blue-fg">.</span>_iterating <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">    760</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+avg / total       0.98      0.98      0.98       317
 
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">dispatch_one_batch</span><span class="ansi-blue-fg">(self, iterator)</span>
-<span class="ansi-green-intense-fg ansi-bold">    606</span>                 <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">False</span>
-<span class="ansi-green-intense-fg ansi-bold">    607</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 608</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>_dispatch<span class="ansi-blue-fg">(</span>tasks<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    609</span>                 <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">    610</span> 
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">_dispatch</span><span class="ansi-blue-fg">(self, batch)</span>
-<span class="ansi-green-intense-fg ansi-bold">    569</span>         dispatch_timestamp <span class="ansi-blue-fg">=</span> time<span class="ansi-blue-fg">.</span>time<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    570</span>         cb <span class="ansi-blue-fg">=</span> BatchCompletionCallBack<span class="ansi-blue-fg">(</span>dispatch_timestamp<span class="ansi-blue-fg">,</span> len<span class="ansi-blue-fg">(</span>batch<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 571</span><span class="ansi-red-fg">         </span>job <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_backend<span class="ansi-blue-fg">.</span>apply_async<span class="ansi-blue-fg">(</span>batch<span class="ansi-blue-fg">,</span> callback<span class="ansi-blue-fg">=</span>cb<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    572</span>         self<span class="ansi-blue-fg">.</span>_jobs<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>job<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    573</span> 
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py</span> in <span class="ansi-cyan-fg">apply_async</span><span class="ansi-blue-fg">(self, func, callback)</span>
-<span class="ansi-green-intense-fg ansi-bold">    107</span>     <span class="ansi-green-fg">def</span> apply_async<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> func<span class="ansi-blue-fg">,</span> callback<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    108</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;Schedule a func to be run&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 109</span><span class="ansi-red-fg">         </span>result <span class="ansi-blue-fg">=</span> ImmediateResult<span class="ansi-blue-fg">(</span>func<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    110</span>         <span class="ansi-green-fg">if</span> callback<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    111</span>             callback<span class="ansi-blue-fg">(</span>result<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, batch)</span>
-<span class="ansi-green-intense-fg ansi-bold">    324</span>         <span class="ansi-red-fg"># Don&#39;t delay the application, to avoid keeping the input</span>
-<span class="ansi-green-intense-fg ansi-bold">    325</span>         <span class="ansi-red-fg"># arguments in memory</span>
-<span class="ansi-green-fg">--&gt; 326</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>results <span class="ansi-blue-fg">=</span> batch<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    327</span> 
-<span class="ansi-green-intense-fg ansi-bold">    328</span>     <span class="ansi-green-fg">def</span> get<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    129</span> 
-<span class="ansi-green-intense-fg ansi-bold">    130</span>     <span class="ansi-green-fg">def</span> __call__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 131</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">[</span>func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> func<span class="ansi-blue-fg">,</span> args<span class="ansi-blue-fg">,</span> kwargs <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    132</span> 
-<span class="ansi-green-intense-fg ansi-bold">    133</span>     <span class="ansi-green-fg">def</span> __len__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
-<span class="ansi-green-intense-fg ansi-bold">    129</span> 
-<span class="ansi-green-intense-fg ansi-bold">    130</span>     <span class="ansi-green-fg">def</span> __call__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 131</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">[</span>func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> func<span class="ansi-blue-fg">,</span> args<span class="ansi-blue-fg">,</span> kwargs <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    132</span> 
-<span class="ansi-green-intense-fg ansi-bold">    133</span>     <span class="ansi-green-fg">def</span> __len__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/model_selection/_validation.py</span> in <span class="ansi-cyan-fg">_fit_and_score</span><span class="ansi-blue-fg">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, return_train_score, return_parameters, return_n_test_samples, return_times, error_score)</span>
-<span class="ansi-green-intense-fg ansi-bold">    236</span>             estimator<span class="ansi-blue-fg">.</span>fit<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>fit_params<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    237</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 238</span><span class="ansi-red-fg">             </span>estimator<span class="ansi-blue-fg">.</span>fit<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>fit_params<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    239</span> 
-<span class="ansi-green-intense-fg ansi-bold">    240</span>     <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/grid_search.py</span> in <span class="ansi-cyan-fg">fit</span><span class="ansi-blue-fg">(self, X, y)</span>
-<span class="ansi-green-intense-fg ansi-bold">    827</span> 
-<span class="ansi-green-intense-fg ansi-bold">    828</span>         &#34;&#34;&#34;
-<span class="ansi-green-fg">--&gt; 829</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_fit<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">,</span> ParameterGrid<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>param_grid<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    830</span> 
-<span class="ansi-green-intense-fg ansi-bold">    831</span> 
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/grid_search.py</span> in <span class="ansi-cyan-fg">_fit</span><span class="ansi-blue-fg">(self, X, y, parameter_iterable)</span>
-<span class="ansi-green-intense-fg ansi-bold">    571</span>                                     self<span class="ansi-blue-fg">.</span>fit_params<span class="ansi-blue-fg">,</span> return_parameters<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    572</span>                                     error_score=self.error_score)
-<span class="ansi-green-fg">--&gt; 573</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">for</span> parameters <span class="ansi-green-fg">in</span> parameter_iterable
-<span class="ansi-green-intense-fg ansi-bold">    574</span>                 for train, test in cv)
-<span class="ansi-green-intense-fg ansi-bold">    575</span> 
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, iterable)</span>
-<span class="ansi-green-intense-fg ansi-bold">    756</span>             <span class="ansi-red-fg"># was dispatched. In particular this covers the edge</span>
-<span class="ansi-green-intense-fg ansi-bold">    757</span>             <span class="ansi-red-fg"># case of Parallel used with an exhausted iterator.</span>
-<span class="ansi-green-fg">--&gt; 758</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">while</span> self<span class="ansi-blue-fg">.</span>dispatch_one_batch<span class="ansi-blue-fg">(</span>iterator<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    759</span>                 self<span class="ansi-blue-fg">.</span>_iterating <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">    760</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">dispatch_one_batch</span><span class="ansi-blue-fg">(self, iterator)</span>
-<span class="ansi-green-intense-fg ansi-bold">    606</span>                 <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">False</span>
-<span class="ansi-green-intense-fg ansi-bold">    607</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 608</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>_dispatch<span class="ansi-blue-fg">(</span>tasks<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    609</span>                 <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">    610</span> 
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">_dispatch</span><span class="ansi-blue-fg">(self, batch)</span>
-<span class="ansi-green-intense-fg ansi-bold">    569</span>         dispatch_timestamp <span class="ansi-blue-fg">=</span> time<span class="ansi-blue-fg">.</span>time<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    570</span>         cb <span class="ansi-blue-fg">=</span> BatchCompletionCallBack<span class="ansi-blue-fg">(</span>dispatch_timestamp<span class="ansi-blue-fg">,</span> len<span class="ansi-blue-fg">(</span>batch<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 571</span><span class="ansi-red-fg">         </span>job <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_backend<span class="ansi-blue-fg">.</span>apply_async<span class="ansi-blue-fg">(</span>batch<span class="ansi-blue-fg">,</span> callback<span class="ansi-blue-fg">=</span>cb<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    572</span>         self<span class="ansi-blue-fg">.</span>_jobs<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>job<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    573</span> 
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py</span> in <span class="ansi-cyan-fg">apply_async</span><span class="ansi-blue-fg">(self, func, callback)</span>
-<span class="ansi-green-intense-fg ansi-bold">    107</span>     <span class="ansi-green-fg">def</span> apply_async<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> func<span class="ansi-blue-fg">,</span> callback<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    108</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;Schedule a func to be run&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 109</span><span class="ansi-red-fg">         </span>result <span class="ansi-blue-fg">=</span> ImmediateResult<span class="ansi-blue-fg">(</span>func<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    110</span>         <span class="ansi-green-fg">if</span> callback<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    111</span>             callback<span class="ansi-blue-fg">(</span>result<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, batch)</span>
-<span class="ansi-green-intense-fg ansi-bold">    324</span>         <span class="ansi-red-fg"># Don&#39;t delay the application, to avoid keeping the input</span>
-<span class="ansi-green-intense-fg ansi-bold">    325</span>         <span class="ansi-red-fg"># arguments in memory</span>
-<span class="ansi-green-fg">--&gt; 326</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>results <span class="ansi-blue-fg">=</span> batch<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    327</span> 
-<span class="ansi-green-intense-fg ansi-bold">    328</span>     <span class="ansi-green-fg">def</span> get<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    129</span> 
-<span class="ansi-green-intense-fg ansi-bold">    130</span>     <span class="ansi-green-fg">def</span> __call__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 131</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">[</span>func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> func<span class="ansi-blue-fg">,</span> args<span class="ansi-blue-fg">,</span> kwargs <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    132</span> 
-<span class="ansi-green-intense-fg ansi-bold">    133</span>     <span class="ansi-green-fg">def</span> __len__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py</span> in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
-<span class="ansi-green-intense-fg ansi-bold">    129</span> 
-<span class="ansi-green-intense-fg ansi-bold">    130</span>     <span class="ansi-green-fg">def</span> __call__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 131</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">[</span>func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> func<span class="ansi-blue-fg">,</span> args<span class="ansi-blue-fg">,</span> kwargs <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    132</span> 
-<span class="ansi-green-intense-fg ansi-bold">    133</span>     <span class="ansi-green-fg">def</span> __len__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/cross_validation.py</span> in <span class="ansi-cyan-fg">_fit_and_score</span><span class="ansi-blue-fg">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, return_train_score, return_parameters, error_score)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1663</span>             estimator<span class="ansi-blue-fg">.</span>fit<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>fit_params<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1664</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 1665</span><span class="ansi-red-fg">             </span>estimator<span class="ansi-blue-fg">.</span>fit<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>fit_params<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1666</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1667</span>     <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/svm/base.py</span> in <span class="ansi-cyan-fg">fit</span><span class="ansi-blue-fg">(self, X, y, sample_weight)</span>
-<span class="ansi-green-intense-fg ansi-bold">    187</span> 
-<span class="ansi-green-intense-fg ansi-bold">    188</span>         seed <span class="ansi-blue-fg">=</span> rnd<span class="ansi-blue-fg">.</span>randint<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>iinfo<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;i&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>max<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 189</span><span class="ansi-red-fg">         </span>fit<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">,</span> sample_weight<span class="ansi-blue-fg">,</span> solver_type<span class="ansi-blue-fg">,</span> kernel<span class="ansi-blue-fg">,</span> random_seed<span class="ansi-blue-fg">=</span>seed<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    190</span>         <span class="ansi-red-fg"># see comment on the other call to np.iinfo in this file</span>
-<span class="ansi-green-intense-fg ansi-bold">    191</span> 
-
-<span class="ansi-green-fg">/usr/lib/python3.6/site-packages/sklearn/svm/base.py</span> in <span class="ansi-cyan-fg">_dense_fit</span><span class="ansi-blue-fg">(self, X, y, sample_weight, solver_type, kernel, random_seed)</span>
-<span class="ansi-green-intense-fg ansi-bold">    254</span>                 cache_size<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>cache_size<span class="ansi-blue-fg">,</span> coef0<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>coef0<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    255</span>                 gamma<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>_gamma<span class="ansi-blue-fg">,</span> epsilon<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>epsilon<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 256</span><span class="ansi-red-fg">                 max_iter=self.max_iter, random_seed=random_seed)
-</span><span class="ansi-green-intense-fg ansi-bold">    257</span> 
-<span class="ansi-green-intense-fg ansi-bold">    258</span>         self<span class="ansi-blue-fg">.</span>_warn_from_fit_status<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
+</pre>
 </div>
 </div>
 
@@ -26104,25 +25967,700 @@ YII=
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Despite having only one hidden layer it work quite good.
+<br> How about a custom simplest perceptron?</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Despite</span> <span class="n">having</span> <span class="n">only</span> <span class="n">one</span> <span class="n">hidden</span> <span class="n">layer</span> <span class="n">it</span> <span class="n">work</span> <span class="n">quite</span> <span class="n">good</span><span class="o">.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Perceptron</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">unit_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">result</span><span class="p">):</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">result</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">result</span><span class="o">!=</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">features_len</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span><span class="n">start_eta</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">features_len</span><span class="p">)</span>
+        <span class="c1">#self.errors = []</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="c1">#iterations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_eta</span><span class="o">=</span><span class="n">start_eta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eta</span> <span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_eta</span>  <span class="c1"># learning rate</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+            <span class="n">error</span><span class="o">=</span><span class="n">y</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">unit_step</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="c1">#self.errors.append(error)</span>
+            <span class="n">changers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">eta</span> <span class="o">*</span> <span class="n">error</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">changers</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eta</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_eta</span><span class="o">*</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+        <span class="c1">#print(self.eta)</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_step</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+        <span class="n">prediction</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">differ</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">prediction</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">-</span><span class="n">differ</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> 
+        
+<span class="n">p</span><span class="o">=</span><span class="n">Perceptron</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_data_x</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_data_x</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_data_y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_data_x</span><span class="p">,</span><span class="n">test_data_y</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.952681388013
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How about tuning starting learning rate?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Finder_Best_Params_For_Perceptron</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">interval</span><span class="p">,</span><span class="n">plot_x_interval</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">mean_results</span><span class="o">=</span><span class="p">{}</span>
+        <span class="n">best_value</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">best_accuracy</span><span class="o">=</span><span class="mf">0.1</span> <span class="c1">#some low accuracy</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">interval</span><span class="p">:</span>
+            <span class="n">scores</span><span class="o">=</span><span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cv</span><span class="p">):</span>
+                <span class="n">procent_of_train_data</span><span class="o">=</span><span class="mf">0.9</span>
+                <span class="n">train_data_x</span><span class="p">,</span><span class="n">test_data_x</span><span class="p">,</span><span class="n">train_data_y</span><span class="p">,</span><span class="n">test_data_y</span><span class="o">=</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">data_x</span><span class="p">,</span><span class="n">data_y</span><span class="p">,</span><span class="n">train_size</span><span class="o">=</span><span class="n">procent_of_train_data</span><span class="p">)</span>
+                <span class="n">p</span><span class="o">=</span><span class="n">Perceptron</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_data_x</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_data_x</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_data_y</span><span class="p">),</span><span class="n">start_eta</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+                <span class="n">scores</span><span class="o">+=</span><span class="n">p</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_data_x</span><span class="p">,</span><span class="n">test_data_y</span><span class="p">)</span>
+            <span class="n">scores</span><span class="o">/=</span><span class="n">cv</span>
+            <span class="n">mean_results</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="n">scores</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">best_accuracy</span><span class="o">&lt;</span><span class="n">scores</span><span class="p">):</span>
+                <span class="n">best_accuracy</span><span class="o">=</span><span class="n">scores</span>
+                <span class="n">best_value</span><span class="o">=</span><span class="n">v</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best accuracy:&quot;</span><span class="p">,</span><span class="n">best_accuracy</span><span class="p">,</span><span class="s2">&quot; best value:&quot;</span><span class="p">,</span><span class="n">best_value</span><span class="p">)</span>
+        <span class="c1">#print(mean_results)</span>
+        <span class="o">%</span><span class="k">matplotlib</span> inline
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">mean_results</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span><span class="nb">list</span><span class="p">(</span><span class="n">mean_results</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Leaning rate&quot;</span><span class="o">+</span><span class="s2">&quot; value&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">plot_x_interval</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1">#cleaning mess</span>
+<span class="n">f</span><span class="o">=</span><span class="n">Finder_Best_Params_For_Perceptron</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)),</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Best accuracy: 0.959621451104  best value: 0.1001
+
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA2gAAAHHCAYAAADKw3svAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3X2c1WP+x/HX1X2UokRWKEJKVKrtuF33ZFrLLotl3d9G
+UruUElFZphsRxWLXXX7sj93c3+y6Td/uFVHSKhKlIum+5vr98Zn5GWOmZs6cc67vOef9fDzmcczM
+mXPew5g5n+/1uT6X894jIiIiIiIi4dUIHUBERERERESMCjQREREREZGYUIEmIiIiIiISEyrQRERE
+REREYkIFmoiIiIiISEyoQBMREREREYkJFWgiIiIiIiIxoQJNREREREQkJlSgiYiIiIiIxIQKNBER
+ERERkZiITYHmnLvKOfeZc26dcy5yznXeyn1rOeducs59Wnz/mc65E8q5327OuUedc8udc2udc7Oc
+cx3L3Gewc25J8edfc87tk47vT0REREREZFtiUaA5584EhgODgA7ALOAV51zTCr5kCHAJcBXQBhgH
+POucO6jUYzYGJgIbgBOK79cH+LbUfa4HegKXAV2ANcXPWyeV35+IiIiIiEhlOO996Aw45yJgsve+
+V/H7DvgCGO29v6Oc+38J3Oq9H1vqY/8A1nrvzyt+/3agm/f+yK087xLgTu/9yOL3dwCWAn/03j+V
+sm9QRERERESkEoKvoDnnagOdgH+XfMxb1fg60K2CL6uLrYyVtg44rNT7BcA059xTzrmlzrkZzrmL
+Sz1vS2DXMs/7PTB5K88rIiIiIiKSNsELNKApUBNbuSptKVZAlecV4Drn3D7OHAecBjQvdZ9WwBXA
+POB4YCww2jn3h+LP7wr4Kj6viIiIiIhI2tQKHWArHFZAlacXcD8wFygCFgAPAReUuk8NYIr3fmDx
++7Occ22xou2xZJ7XOdcE28+2EFhfqe9CRERERERyUT1gL+AV7/2KVD1oHAq05cAWYJcyH2/Gz1e3
+APDeLwdOKx7m0cR7/1XxnrPPSt3tK+DjMl/6MbbSBvA1VoztUuZ5mgEzK8h6AvD4Vr8bERERERHJ
+J+cAT6TqwYIXaN77Tc656cAxwAT4/yEhxwCjt/G1G4GvivexnQ48WerTE4H9ynzJfsCi4q/9zDn3
+dfHzzC5+3h2ArsCYCp5yIcBjjz1GmzZtKvkdiiSnd+/ejBw5MnQMyQP6WZNM0c+aZIp+1iQTPv74
+Y/7whz9AcY2QKsELtGIjgL8XF2pTgN7AdsDfAJxzjwCLvff9i9/vAvwCeB/YHRvP74A7Sz3mSGCi
+c64f8BRWeF2MjecvMQoY4Jz7FPsXeyuwGPhXBTnXA7Rp04aOHTtWcBeR1GjUqJF+ziQj9LMmmaKf
+NckU/axJhqV061MsCjTv/VPFZ54NxloO3wdO8N5/U3yX3YHNpb6kHnAb0BL4AXgB+EPxFMaSx5zm
+nPsNcDswEGt/7OW9f7LUfe5wzm2HnaPWGHgHOKl4ZU5ERERERCSjYlGgAXjv7wXureBzR5d5/22g
+bSUe80XgxW3c52bg5srmFBERERERSZc4jNkXERERERERVKCJxNKaNdCly1mhY0ieOOss/axJZuhn
+TTJFP2uSzZz3FR01JmU55zoC06dPn66Np5JWd9wBAwbAypXQoEHoNCIiIiJS1owZM+jUqRNAJ+/9
+jFQ9rlbQRGLovfdg0yaYOjV0EhERERHJJBVoIjHjPUSR/fN774XNIiIiIiKZpQJNJGYWLYKlS2H7
+7VWgiYiIiOQbFWgiMVOyenbhhTBpEhQVhc0jIiIiIpmjAk0kZqII9t4bfv1r+PZbmDcvdCIRERER
+yRQVaCIxE0Xwy19Cly5Qo4baHEVERETyiQo0kRjZsAFmzrQCrWFDaN9eBZqIiIhIPlGBJhIjM2fC
+xo1WoAF066YCTURERCSfqEATiZEognr1bOUMIJGAuXNhxYqwuUREREQkM1SgicRIFEGnTlCnjr2f
+SPz4cRERERHJfSrQRGIkiqBr1x/fb9kSdtlFbY4iIiKSXh99BJs3h04hoAJNJDa++soOqS7Zfwbg
+nK2iqUATERGRdPnmGzj8cBg8OHQSARVoIrExebLdli7QwAq0KVNg06bMZxIREZHc17u33V59ddgc
+YlSgicREFMFuu8Huu//044kErF0Ls2eHySUiIiK565VX4PHHYcQI2Hnn0GkEVKCJxEbJAdXO/fTj
+HTva0BC1OYqIiEgqrVkDl18OxxwD550XOo2UUIEmEgObN8O0aT9vbwQbu9+pkwo0ERERSa2bb4av
+v4axY39+gVjCUYEmEgNz5thVrPIKNNCgEBEREUmtGTOsrXHQINhnn9BppDQVaCIxEEVQs6atlJUn
+kYDPP4cvv8xsLhEREck9mzfDpZdCu3bQp0/oNFKWCjSRGIgiOOgg2G678j/frZvdTpqUuUwiIiKS
+m0aPthW0Bx6A2rVDp5GyVKCJxEDJgJCKNG9uh1arzVFERESqY+FCGDjQRup36RI6jZRHBZpIYN9+
+C3Pnbr1AA+1DExERkerxHq64Apo0gdtuC51GKqICTSSwKVPstjIF2owZsG5d+jOJiIhI7nnySXj5
+ZRgzBho2DJ1GKqICTSSwKIKddtr2BKVEAjZtgunTM5NLREREcsfKldCrF/zud1BQEDqNbI0KNJHA
+Kjqguqx27aBBA7U5ioRWVASnngr/8z+hk4iIVN6f/gQbN8Jdd4VOItuiAk0koKIimDx52+2NALVq
+QdeuKtBEQnvuOfjXv+xK9Jo1odOIiGzbG2/AQw/BnXfa4DGJNxVoIgHNn29DQipToMGPg0K8T28u
+EalYYaGtaK9caaOqRUTibN06uOwyOPxwuOii0GmkMlSgiQQURdbaWNkxt4kEfPMNLFiQ3lwiUr4o
+gnfftelnl10Gd9xhF1lEROJqyBBYtAjuvx9q6JV/VtB/JpGAogjatIFGjSp3/5KVNrU5ioQxfDi0
+bm0b7AcMsME9f/lL6FQiIuX78EP7HXXjjbD//qHTSGWpQBMJaFsHVJfVuDG0basCTSSEBQvgmWeg
+Tx+7Cr3LLnDttdbm+NVXodOJiPzUli1wySV2Uen660OnkapQgSYSyJo1MHt21Qo00IHVIqGMGmVH
+Ypx33o8f69sX6tWDW28Nl0tEpDxjx9qF4Pvvh7p1Q6eRqlCBJhLItGk2xTGZAu3DD2HVqvTkEpGf
+W7nSJqBddRXUr//jxxs3hhtugAce0N5QEYmPxYuhXz/bK3vYYaHTSFWpQBMJJIrsXLMDDqja1yUS
+NsVx8uT05BKRnxs71i6oXHnlzz/Xsyc0awY33ZT5XCIiZXlvv5caNIDbbw+dRpKhAk0kkCiy6Y01
+a1bt61q3hiZN1OYokikbNtg+sz/+0Qqxsrbbzoqz8eOtbVlEJKRnn7WzGu++21b5JfuoQBMJwPuq
+Dwgp4Zz2oYlk0uOPw7Jl0Lt3xfe58ELYe2+blCYiEsqqVbZ61qMHnHZa6DSSLBVoIgF8/jl8/XVy
+BRpYgRZFNqFJRNKnqMgOpu7RA/bbr+L71a4NgwfD88/DxImZyyciUlq/frB6NYwZYxd0JTupQBMJ
+IIrstmvX5L6+Wzf7BTxnTuoyicjPvfwyfPyxTWvcljPPhIMOshdI3qc/m4hIaRMnwn33wbBhsPvu
+odNIdahAEwkgiqBVq/L3s1RG5862d01tjiLpVVhoF1IOPXTb961RA4YOhXfescJORCRTNmywM8+6
+doUrrgidRqpLBZpIAMnuPyux3XbQoYMKNJF0mj4d3njDVs8q2yp00kk20rp/f2uPFBHJhDvugPnz
+7ciPqg4fk/hRgSaSYRs2wIwZ1SvQQINCRNJt+HBo2RJ+85vKf41z1l70/vvw9NPpyyYiUmLuXLjt
+Nvjzn+HAA0OnkVRQgSaSYe+/Dxs3pqZAW7AAli5NTS4R+dGiRfDUU3DddVW/Gn3YYdC9OwwYAJs2
+pSefiAjYSv2ll8Iee9jvHMkNKtBEMiyKoG5dGyZQHYmE3U6aVP1MIvJTd90FO+wAF1yQ3NcPGQKf
+fgoPP5zaXCIipT30kO17HTcO6tcPnUZSRQWaSIZFEXTqBHXqVO9xWrSwKU1qcxRJre++s30cV14J
+22+f3GMcdBCcdRbccgusW5fafCIiYMf1/OlPdiHp6KNDp5FUUoEmkmFRlPx4/bK0D00k9e6/39qQ
+e/as3uMMHmwHXI8Zk5pcIiKl9eplZzDeeWfoJJJqKtBEMujrr2HhwurvPyuRSMC0aTZ4RESqb+NG
+a28891zYddfqPdY++8DFF9vQkFWrUpNPRATg+edtn+yoUdCkSeg0kmoq0EQyaPJku01lgbZhA8yc
+mZrHE8l3Tz4JS5bYcJBUGDjQWhwLC1PzeCIiq1dbC/aJJ1orteQeFWgiGRRF0Ly57R9LhYMPtk3B
+anMUqT7vbbT+ySfDAQek5jF32w2uvhpGjtTEVRFJjYEDYcUKuPfeyp/RKNlFBZpIBk2ebKtnqfqF
+Wrs2dO6sSY4iqfD66zB7th1MnUrXXw+1asHQoal9XBHJP1OmwOjRtse1ZcvQaSRdVKCJZMiWLfaL
+NVXtjSVKBoV4n9rHFck3hYXQsSMcdVRqH3ennewA2fvusz2oIiLJ2LTJzjzr0MEGhEjuUoEmkiFz
+5sCaNekp0JYsgc8/T+3jiuST2bPh1Vdt9SwdLUO9elmhdvPNqX9sEckPI0bABx/YMSC1aoVOI+mk
+Ak0kQ6IIata0M9BSqVs3u9U+NJHkDR8Oe+wBv/1teh5/++1hwAB49FH46KP0PIeI5K4FC+wCT+/e
+ttIvuU0FmkiGRBG0b5/8wbcVadoU9t1XBZpIshYvhieegGuvtX2d6XLppVYEDhiQvucQkdzjPVx+
+uR39ccstodNIJqhAE8mQKEp9e2MJHVgtkry777YLJxdfnN7nqVPHNvY/++yPR26IiGzLo4/aEKP7
+7kv9RV6JJxVoIhnw3Xfw8cfpLdBmzYIffkjP44vkqu+/h7Fj4bLLoGHD9D/f2WdD27bQv3/6n0tE
+st8339i5jGefbeeeSX5QgSaSAVOm2G06C7QtW2Dq1PQ8vkiuevBBWLsWrrkmM89XsyYMGQL/+Y9d
+ERcR2Zo+fazFceTI0Ekkk1SgiWRAFMGOO0Lr1ul5/DZtoFEjtTmKVMWmTTBqlF2Z/sUvMve8PXrY
+xZp+/XQ8hohU7NVXrb1x+HBo1ix0GskkFWgiGVCy/ywd47sBatSwaY4q0EQq7x//sOMp+vTJ7PM6
+B8OGwbRp8MwzmX1uEckOa9faYJBf/Qr++MfQaSTTVKCJpJn36R0QUiKRgEmToKgovc8jkgu8t4Op
+jz/epqtm2lFH2XMPGACbN2f++UUk3m65xc44HTcufRd3Jb5UoImk2fz58O23mSnQvv0W5s1L7/OI
+5II334QZM+xg6lCGDoW5c62FSUSkxMyZ1tY4aFD6tkZIvKlAE0mzKLLbLl3S+zxduliro9ocRbat
+sNBWzo49NlyGTp3sYOybb4b168PlEJH42LIFLrnE9paHvIAkYalAE0mzKLJftI0bp/d5Gja0F5wq
+0ES27qOP4MUX7cVP6Nah226DL7+0Uf8iInffbav7DzwAtWuHTiOhqEATSbNM7D8roQOrRbZtxAjY
+bTc488zQSWC//eD88230/urVodOISEiLFtm+1KuuytzrBoknFWgiabRmDcyendkCbe5cWLEiM88n
+km2+/tr2fPXqBXXqhE5jBg2y4kznHInkL+/hyivtSJ6hQ0OnkdBUoImk0fTp1k+eyQINftz3JiI/
+dc89VphdemnoJD9q0cJemBUWwvLlodOISAhPPWWt12PG2JYFyW8q0ETSKIpg++2hbdvMPN9ee8Eu
+u6jNUaQ8a9bAvffaBvx07wmtqn797HbYsLA5RCTzvv0WrrkGTj/dDrIXUYEmkkZRZNMVa9bMzPM5
+p31oIhV5+GH4/ntrb4ybnXe2A7PHjIEvvgidRkQy6U9/gg0bbECICKhAE0kb7+3g6Exv9E0kYMoU
+2LQps88rEmdbtthwkDPOgD33DJ2mfNddZ61NgweHTiIimfLmm/Dgg/CXv0Dz5qHTSFyoQBNJky++
+sIEEIQq0tWttOImImGefhc8+s1WquGrYEPr3t5U+HTgvkvvWr4fLLoPDDrPWa5ESKtBE0qRkUEfX
+rpl93o4dbQiC2hxFjPdw553wq1/Z4dBxdsUVdgTAwIGhk4hIug0ZYheO7r8faugVuZSiHweRNIki
+aNnShnZkUr169iJUBZqImTjR2n779g2dZNvq1YObb4ann7bDakUkN334Idx+u62at2kTOo3EjQo0
+kTTJ5AHVZWlQiMiPCgvhgAPgxBNDJ6mc886D/fe3F24iknuKiuyoj733/nGCq0hpKtBE0mDDBrv6
+HbJA+/xzWLw4zPOLxMW8eTBhgu09y5YWolq14NZb4ZVXbICAiOSWceNsiNgDD0DduqHTSBxlyZ8r
+kewya5YVaaEKtG7d7HbSpDDPLxIXI0dCs2Zwzjmhk1TN6adbq3K/fraHTkRyw5dfwvXX2wra4YeH
+TiNxpQJNJA2iyK6KHXxwmOdv3tz2v6nNUfLZsmXw97/bAbDZdpXaOTu0OorguedCpxGRVLn6ath+
+exurL1IRFWgiaRBFP05TDEX70CTf3XuvtTVefnnoJMk59libPHnjjXaOm4hkt2eftbfRo6Fx49Bp
+JM5UoImkQRRlfrx+WYmE7YNbty5sDpEQ1q2DMWPgootgp51Cp0mOczB0qE17Gz8+dBoRqY5Vq6Bn
+TygogN/+NnQaiTsVaCIptnSpnWsSav9ZiUQCNm+G6dPD5hAJ4ZFHYOVKuPba0Emq55e/hFNPhZtu
+go0bQ6cRkWT17w/ff28XjpwLnUbiTgWaSIpNnmy3oQu0du2gQQO1OUr+KSqC4cPhtNOgVavQaarv
+tttg4UKb+CYi2ee99+C+++xg6hYtQqeRbKACTSTFJk+GXXeFPfYIm6NWLWuzVIEm+ea552D+/Ow4
+mLoy2raFc8+10ftr1oROIyJVsXGjTWzs3Bmuuip0GskWKtBEUqzkgOo4tDCUDArRmG7JJ4WFcNhh
+4feBptItt1jL5ujRoZOISFXccYedx/jAA1CzZug0ki1UoImk0JYtMGVK+PbGEokEfPMNLFgQOolI
+ZkQRvPtu7qyeldhrL5tG+Ze/WKEmIvE3b56tfPftC+3bh04j2UQFmkgKffQR/PBDfAq0khxqc5R8
+MXw4tG5tk9JyzY032uCfO+4InUREtqWoCC67zPac3XRT6DSSbVSgiaRQFNm5S4ccEjqJadzY9q+o
+QJN8sGABPPMM9Olj/x/mml12samUo0fDV1+FTiMiW/Pww/DWWzBuHNSvHzqNZJsc/BMmEk4UWRvD
+9tuHTvIjHVgt+WLUKDvz7LzzQidJn759oV49a5sSkXhautT+X/3jH+GYY0KnkWwUmwLNOXeVc+4z
+59w651zknOu8lfvWcs7d5Jz7tPj+M51zJ5S5zyDnXFGZt4/K3OfNMp/f4py7N13fo+S+kgEhcZJI
+2EG3q1aFTiKSPitWwEMP2UGwuXy1unFj6NfPBg5ob6lIPF17rU1SLiwMnUSyVSwKNOfcmcBwYBDQ
+AZgFvOKca1rBlwwBLgGuAtoA44BnnXMHlbnfh8AuwK7Fb4eV+bwH7i91n+bAn6v7/Uh++u4724MW
+xwLN+x/PZxPJRWPH2p6PK68MnST9evaEZs20r0Ukjl58EZ580lb0m1b0KlZkG2JRoAG9gXHe+0e8
+93OBy4G1wIUV3P8PwBDv/Sve+4Xe+7HAi0CfMvfb7L3/xnu/rPitvNlXa8vc54dUfVOSX6ZOtdu4
+FWitW0OTJmpzlNy1fj3cfTecfz7svHPoNOlXv74VZ+PHw+zZodOISIkffoArroDjj4ezzw6dRrJZ
+8ALNOVcb6AT8u+Rj3nsPvA50q+DL6gIbynxsHT9fIWvtnPvSObfAOfeYc66889vPcc5945z7wDk3
+1DmXw80xkk5RBDvuaAVRnDinfWiS2x5/HJYtg969QyfJnAsvhL33tsmOIhIPN91kR9vcd188zkKV
+7BW8QAOaAjWBpWU+vhRrOyzPK8B1zrl9nDkOOA1rUSwRAecDJ2Arci2Bt51zpcc3PI6txh0FDAXO
+BR6tzjcj+SuK7GDcOE6PSyQs35YtoZOIpFZRkY3W//WvYd99Q6fJnNq1bVDI88/DxImh04jI1Klw
+110weDC0ahU6jWS7GL6U/H8O2yNWnl7AfGAutpI2GngI+P+Xn8Xtj//rvf/Qe/8acDKwI3BGqfv8
+1Xv/mvd+jvd+PHAe8BvnXMu0fEeSs7yP54CQEokErF4Nc+aETiKSWi+9BB9/nHsHU1fGGWfAwQfb
+0BBf0V9LEUm7TZvgkktsivO114ZOI7mgVugAwHKssNqlzMeb8fNVNQC898uB05xzdYAm3vuvnHO3
+A59V9CTe+1XOuU+AfbaSZTJWGO6ztcfq3bs3jRo1+snHzjrrLM4666ytPLTksk8/hZUr41ugHXKI
+TZR67z37AyKSKwoL7f+7RCJ0ksyrUQOGDIHu3eHll+Gkk0InEslPo0bBBx/YMK5acXhlLWkxfvx4
+xo8f/5OPrUrTiGznY3DZzTkXAZO9972K33fA58Bo7/2dlfj62sBHwJPe+4EV3KcBsAgY5L2/p4L7
+HAq8DRzkvf+wnM93BKZPnz6djh07Vu6bk7zw6KN29tLKlbYPLY66dIH994dHHgmdRCQ1pk+3iw//
++AecfnroNGF4D0ccYcMJpk+PZ4u1SC7773+hXTu4/HIYMSJ0Gsm0GTNm0KlTJ4BO3vsZqXrcuPwq
+HwFc6pw7zzm3PzAW2A74G4Bz7hHn3NCSOzvnujjnfuOca+mcOxx4CVv5urPUfe50zh3hnNvTOZcA
+ngU2A+OLP9/KOTfAOdex+D49gL8Db5VXnIlsTRRZ8RPX4gygWzcNCpHcMny47fU49dTQScJxDoYN
+g/ffh6eeCp1GJL94b4VZs2a290wkVWJRoHnvn8JG5A8GZgLtgRO8998U32V3fjowpB5wGzAH+F/g
+C+Aw7/33pe6zO/AEtk/tSeAb4Jfe+xXFn98IHIsNHPkYK+6eBnqk+vuT3Bfn/WclEgk72HZpuY3D
+Itll0SIrSHr3hpo1Q6cJ67DDrM1x4EDbCyMimfH44/Daa3DvvdCgQeg0kkti0ynrvb8XuLeCzx1d
+5v23gbbbeLytbgjz3i/GpjeKVMvatTBrFlx6aegkW1eyR2fSpPxecZDccNddsMMOcMEFoZPEw5Ah
+NjDk4Yfj/7tIJBcsX24XiH7/ezj55NBpJNfEYgVNJJtNn27j6+O+gtaiBey+u9ocJft99x088ABc
+eSVsv/22758PDjoIzjoLbrkF1q0LnUYk9/XpY3/7R40KnURykQo0kWqKInuR2Hara7rxoAOrJRfc
+fz9s3Ag9e4ZOEi+DB9uB3feUOwZLRFLl9ddt4FZhIexSdga5SAqoQBOppiiCzp2zY7RuIgHTpsGG
+DaGTiCRn40Zrbzz3XNh1123fP5/ssw9cfDHcfjukafKzSN5buxYuuwyOOkot1pI+KtCS8NVXoRNI
+XHhve7ri3t5YIpGw4mzmzNBJRJLz5JOwZAlcd13oJPE0cKC1OBYWhk4ikpsGD4Yvv4Rx42yKqkg6
+qEBLwjvvhE4gcbF4sRXs2VKgHXww1K+vNkfJTt5b4dG9OxxwQOg08bTbbnD11TBypCa2iqTarFn2
+O2jgQNh339BpJJepQEvC22+HTiBxEUV227Vr2ByVVbu2tWOqQJNs9Npr8MEH0Ldv6CTxdv311nI9
+ZEjoJCK5Y8sWuOQSO/P0T38KnUZynQq0JEydCqtXh04hcRBFsNde2bUXJpGAiRNtNUIkmxQWQqdO
+cOSRoZPE2047wZ//DGPHwsKFodOI5IZ77rE93A88AHXqhE4juU4FWhI2b4ZXXw2dQuIgGw6oLiuR
+gK+/toN+RbLFrFm2gta3r/Z9VEavXlao3Xxz6CQi2e/zz+HGG+1oj27dQqeRfKACLQmtWsFzz4VO
+IaFt3GhnoGVbgVbyx0VtjpJNhg+HPfaA3/42dJLssP32MGAAPPoozJkTOo1I9vLeCrPGjWHo0NBp
+JF+oQEvCkUfCCy9YP7Lkr1mzbCJithVoTZva5mYVaJItFi+G8eOhd+/sOM4iLi691IraAQNCJxHJ
+Xk8/ba/57rkHdtghdBrJFyrQknDEEbB8+Y8DIiQ/RZH1oR98cOgkVacDqyWb3H23rQhddFHoJNml
+Th0bCf7Pf8LkyaHTiGSfb7+Fa66B006DU08NnUbyiQq0JLRtCzvvrDbHfBdF0LEj1K0bOknVJRIw
+ezb88EPoJCJb9/33Nuzi8suhYcPQabLP2Wfb36z+/UMnEck+119v5wqOHh06ieQbFWhJqFkTTjlF
+BVq+i6LsGa9fViJhLbpTp4ZOIrJ1Dz4Ia9fa2V5SdTVr2rj9//wHXn89dBqR7PH22zax8fbb4Re/
+CJ1G8o0KtCQVFMBHH8GCBaGTSAjffAP//W/27T8r0aYNNGqkNkeJt02bYNQoWwXSC6Tk9ehhv6v6
+9dPxGiKVsX697eFMJOCyy0KnkXykAi1Jxx1n/f1aRctPJfs5srVAq1HDpjmqQJM4+8c/bLx1nz6h
+k2Q352DYMDvD6ZlnQqcRib9hw+wi7P33299LkUzTj12SGjSAo49WgZavogh22QX23DN0kuQlEjBp
+EhQVhU4i8nPe28HUxx8P7duHTpP9jjrK/l0OGGBneYpI+T76yAq0G26w/ZsiIahAq4YePaxH+bvv
+QieRTCs5oDqbD8xNJGxC1bx5oZOI/Nybb8KMGXYwtaTG0KEwd66djSYiP1dUBJdcYufdarCOhKQC
+rRpOOcWuRL78cugkkklbtsCUKdnb3liiSxdr3VCbo8RRYaGtnB17bOgkuaNTJ/jd72DQINtjIyI/
+df/99jdx3DioVy90GslnKtCqoUULOwNLbY755eOPYfXq7C/QGja0F8Aq0CRu5syBF1+01bNsXqWO
+o1tvhSVpE6mkAAAgAElEQVRL7OgCEfnRkiU2Vv/ii+HII0OnkXynAq2aevSAl15ST38+iSJbeTrk
+kNBJqk8HVkscjRhhUxvPPDN0ktyz335w/vk2en/16tBpROLj6quhfn24447QSURUoFVbQYHt45k4
+MXQSyZQoggMPtEEx2S6RsD0pK1aETiJivvoKHnsMevWySbmSeoMGWXE2cmToJCLx8M9/2oTT0aNh
+xx1DpxFRgVZtHTtC8+YwYULoJJIpJQNCckEiYbdRFDaHSIl77oG6de0MIkmPFi3gqqtsn9/y5aHT
+iIT1/ffQsyd07257NEXiQAVaNdWoYcNCtA8tP6xaZSN4c6VA22sv2HVXtTlKPPzwA9x3n01Ra9Qo
+dJrc1q+f3Q4bFjaHSGj9+9s07nvv1Z5XiQ8VaCnQowfMn69x5flg6lQ7nylXCjTntA9N4uPhh+1q
+dq9eoZPkvqZN7QDwMWPgiy9CpxEJY9IkK8yGDIE99gidRuRHKtBS4JhjbGOp2hxzXxRB48aw776h
+k6ROImHHBmzaFDqJ5LMtW2xP1Jln6oVSplx3nU1zHTw4dBKRzNu40VqpO3WyFkeROFGBlgL169tZ
+PWpzzH1RBF27WmtrrujWDdauhdmzQyeRfPbss/DZZ7aqI5nRsCHceCM89JA6QCT/FBbasTkPPAA1
+a4ZOI/JTOfQyM6wePWySo6bh5S7vc2tASImOHW1antocJRTv4c474eij7edRMufyy+1Ig4EDQycR
+yZxPPrGV4z597DxbkbhRgZYi3btDUZEdriq5acECK8BzrUCrV89aPFSgSSgTJ1qbrVbPMq9ePbj5
+Znj6aZgxI3QakfTzHi67zC5MDBoUOo1I+VSgpUjz5tC5s9occ1nJKPouXcLmSAcNCpGQCgvhgAPg
+xBNDJ8lP550H++9v0+xEct3f/gZvvgljx8J224VOI1I+FWgpVFAAL79sG08l90QR7Lcf7LRT6CSp
+l0jA55/D4sWhk0i+mTfPBiz16ZNbezuzSa1acNtt8Mor9sJVJFctXWq/a849F447LnQakYrpz2EK
+9egBq1fD22+HTiLpkIv7z0p062a3kyaFzSH5Z+RIaNYMzjkndJL8dtppcMghdj6a96HTiKRH7952
+IWjEiNBJRLZOBVoKtW8PLVpo3H4uWrsWZs3K3QKteXNo2VJtjpJZy5bB3/8O11wDdeuGTpPfnIOh
+Q+1ClFr1JRe99BKMH28XhZo2DZ1GZOtUoKWQc9bm+NxzugKZa2bMgM2bc7dAA+1Dk8y79167mn35
+5aGTCNhxMb/6lY3e37IldBqR1PnhB7jiCmtr/MMfQqcR2TYVaCnWowcsXAhz5oROIqkURbaZuF27
+0EnSJ5GwQnTdutBJJB+sXQtjxsBFF+Xmvs5s5BwMGwYffghPPBE6jUjqDBpkK/Zjx9rPuUjcqUBL
+saOOggYN1OaYa6LIpnTWqhU6SfokErZKOG1a6CSSDx55BFauhGuvDZ1ESuvaFU491V7QauCV5ILp
+02HUKDtOolWr0GlEKkcFWorVrQvHH68e/lyTywNCSrRrZxcX1OYo6bZli23SP/10vWCKo9tus06Q
+Bx4InUSkejZvhksugQMPtAEhItlCBVoaFBTA5Mm2nC7Zb/Fi+PLL3C/QatWyq+cq0CTdnnsO5s/X
+wdRx1batjSG/9VZYsyZ0GpHkjRplA74eeABq1w6dRqTyVKClQffudvvCC2FzSGqUHFDdtWvYHJlQ
+MihEQ24knQoL4fDD8+P/qWx1yy3WgnrXXaGTiCTns8/gpptsSmznzqHTiFSNCrQ02HlnO1dK+9By
+QxTBnnvaKPpcl0jA8uXw6aehk0iumjQJJk6Evn1DJ5Gt2Wsvm655xx1WqIlkE+9tauPOO9tKsEi2
+yeGRB2EVFNgvhfXroV690GmkOvJh/1mJku/zvfegdeuwWSQ3DR8O++4Lp5wSOolsy403wkMPWZF2
+++2h0+SfTZvs3K677oKvvw6dJrsUFdm/s+eft73VItlGBVqa9OgB/frBG2/ASSeFTiPJ2rjRJkD9
+9rehk2RG48a2/2TSJPjjH0OnkVyzYAE8+yzcd5+dfybxtssuNmVzxAhrE9ttt9CJ8sO6dfDgg9YK
+vGiRXcz49a9Dp8o+++7745YTkWyjAi1N2rSx6WQTJqhAy2azZ9sqaL6soIEOrJb0GTUKmjSxARSS
+Hf70Jyuob73VbiV9vvvODm8fNQpWrIDf/94G6hx4YOhkIpJpuoaZJs5Zm+Pzz2vgQjaLIqhTBzp0
+CJ0kcxIJO6h21arQSSSXrFhh7XJXXQX164dOI5XVqBHccAP89a+2Aiqpt3SpddzsuScMHmzHT8yf
+D48/ruJMJF+pQEujggIb0f7++6GTSLKiyIqzunVDJ8mcRMIuKkyeHDqJ5JKxY21fyJVXhk4iVdWz
+JzRrZhPxJHUWLrQLFnvtBffcA5ddZpMH77tP5wOK5DsVaGl0xBF29VGHVmevyZPzq70RbDhIkyZq
+c5TUWb8e7r4bzj/fpqpJdqlf34qz8eOt7VuqZ84ca/PdZx946ikbxvL55zaMJR+mBYvItqlAS6Pa
+teHEEzVuP1uVjJvPt7OanNM+NEmtxx+HZcugd+/QSSRZF14Ie+9txYQkZ/JkOPVUaNcO3nrLhq8s
+XAgDBsCOO4ZOJyJxogItzQoKbArgkiWhk0hVlbT45dsKGliBFkWwZUvoJJLtiopstP6vf21T1SQ7
+1a5tg0Kef97OsZPK8R5eew2OPtr+lsydCw8/bBf/rrkGtt8+dEIRiSMVaGl20klQs6b9UZPsEkW2
+72KvvUInybxEAlavtlYckep46SX4+GMdTJ0LzjgDDj7YBlpo+NXWFRXB//4vdO4Mxx8P338P//iH
+/U49/3wbPiUiUhEVaGm2005w2GFqc8xGJQdUOxc6SeYdcgjUqqU2R6m+wkL7/yiRCJ1EqqtGDRgy
+BN55B15+OXSaeNq40VbIDjjAzs/cYQd49VWYOtWmM9asGTqhiGQDFWgZUFAA//43rF0bOolU1pYt
++TkgpMR229n0ShVoUh3TpsGbb9rqWT5e6MhFJ50Ehx8O/fvbKpGYtWth9Ggb/HHhhbD//jBpEvzn
+P3Dccfr5F5GqUYGWAQUFNsXs9ddDJ5HKmjvXWvzytUADDQqR6hs+3MaFn3pq6CSSKs7BsGF2fMxT
+T4VOE96338Jtt9kZZtddB0ceCR98AP/8Z37//RCR6lGBlgH77gv77adx+9kkiqyd55BDQicJJ5Gw
+g2mXLg2dRLLRwoXw9NP2olVtXbnl0EOhe3cYOBA2bQqdJoyvvoI//9kKs9tus/158+fDo4/alEYR
+kepQgZYhBQVWoKklJDtEkf2RbdgwdJJwSvYMTZoUNodkp7vusnMgzz8/dBJJhyFDbBLhww+HTpJZ
+//0vXHEFtGwJ48bZQdOLFsGYMfYxEZFUUIGWIQUFthIxbVroJFIZJQNC8tnuu9ub2hylqr79Fh54
+AK68UmPEc9VBB8HZZ8Mtt8C6daHTpN8HH8A550Dr1jad8aabrDAbNgx22SV0OhHJNSrQMiSRsImO
+anOMv++/t1HI+V6ggfahSXLuv99a33r2DJ1E0mnwYDuA/J57QidJn/feswus7dvDu+/ayvDChTYk
+pXHj0OlEJFepQMuQWrXg5JM1bj8bTJ1qZ/yoQLMCbdo02LAhdBLJFhs32jS7887TykKu23tvuPhi
+uP12WLUqdJrU8R5eecUGfhx6qO3F/fvfraWzZ0+bcisikk4q0DKooABmz7a2CImvKLK9M/vtFzpJ
+eImEFWczZ4ZOItniySdhyRIbDiK5b+BAa3EsLAydpPq2bLHBNp06wYkn2vf17LPw4Yd2waF27dAJ
+RSRfqEDLoBNOsJW0558PnUS2Joqga1eb4pjvDj4Y6tdXm6NUjvf2Qv2UU6BNm9BpJBN22w2uuQZG
+jszeia8bN8KDD9rh0mecYdsRXn/dzsI89VT9LRCRzNOvnQxq1AiOOkr70OLMew0IKa12bejcWQWa
+VM5rr9kwhT59QieRTLr+erv4OGRI6CRVs2aNFZatWlmrZtu2MGWKFWfHHKPDpUUkHBVoGVZQAG+8
+YYcgS/z897+wfLkKtNISCZg40YpXka0pLLT2sCOPDJ1EMmnHHe1MsLFjbYBG3K1cadMn99jDch97
+LHz0ETzzjF2QEhEJTQVahhUUWDvFq6+GTiLliSK77dIlbI44SSTg66+1d1K2btYsW0Hr21crD/mo
+Vy9rDbz55tBJKvbll7a6u8ceNtjk7LNt8Mff/qaWXBGJFxVoGdaypR2ArDbHeIoi2HdfaNIkdJL4
+6NbNbtXmKFszfLi98P3tb0MnkRC2394Ghjz6qB1TEieffgqXXmqtjA8+aMXkokVw992w556h04mI
+/FyVCzTnXMt0BMknBQXwwgs2MUriRfvPfq5pUytaVaBJRRYvhvHjoXdv24sk+emSS6zgGTAgdBLz
+/vvw+9/bRN4JE+zctkWLbK9cs2ah04mIVCyZFbQFzrk3nHN/cM7VS3miPFBQYPucStrpJB7WrbM/
+6CrQfk4HVsvWjB5tKygXXRQ6iYRUp47t7frnP20CYijvvGPnjnboYDnuuQc++8yGmTRqFC6XiEhl
+JVOgdQRmAyOAr51z45xz2rFTBV26wM47q80xbmbMgM2bVaCVJ5GwPUY//BA6icTN99/DuHFw+eXQ
+sGHoNBLa2WfbNMT+/TP7vN7Diy/C4YfDEUfAF1/AY4/B/PlwxRV2XIiISLaocoHmvX/fe98L2A24
+EGgOvOucm+Ocu845t3OqQ+aamjXtnKAJE0InkdKiyP6IH3hg6CTxk0hAUZGNoBYp7a9/tdXnq68O
+nUTioGZNGDoU/vMfG1efblu22OHoHTpA9+52ke1f/7ILSueco5ZbEclOSQ8J8d5v9t4/A/wOuB7Y
+GygEFjvnHnHONU9RxpxUUAAffwwLFoROIiWiyEYs6w/6z7VpY61BanOU0jZtglGjbNXkF78InUbi
+oqDAhgv165e+4zk2bID777f9ZWedBbvsYkfYvPce9Oihw6VFJLsl/SvMOXeIc+5e4CvgOqw42xs4
+Fltd+1dKEuao446zfn21OcaHBoRUrEYNe8GlAk1Ke/ppayXTwdRSmnO2ijZtmp0tlkqrV9vE0JYt
+ra22Qwd7nldegaOO0hEPIpIbkpnieJ1z7gPgPawQOw/Y03s/wHv/mff+HeB8bK+aVKBBAzjmGBVo
+cbF4sb2pQKtYIgGTJlmro4j3djD1CSeoLVh+7qij4PjjbaLj5s3Vf7wVK2DQIJsSecMNcOKJ1oXy
+9NN2OLqISC5JZgXtCuAJYA/v/ane++e992Vfsi0DNM9rGwoK4O234bvvQieRkoljXbuGzRFniYT9
+rM6bFzqJxMEbb8DMmXYwtUh5hg6FuXPtbLRkLV5sxzfssYddEDjvPPjvf+Ghh6y9UUQkFyUzJKS1
+936Y9/7rrdxno/f+79WLlvtOOcWuLL78cugkEkX2AmC33UInia8uXazVUW2OAtZmdtBB1gkgUp5O
+neB3v7OVr/Xrq/a1n3xixza0agV/+5u10S5aZHseW7RIS1wRkdhIpsXxAufc78r5+O+cc39MTaz8
+0KIFHHyw2hzjQPvPtq1hQ2jfXgWawJw5NtK8b1/t+ZGtu/VWWLIExo6t3P1nzoQzzoD994eXXrJV
+uM8/t0OmmzZNb1YRkbhIpsXxBmB5OR9fBmT45JPs16OHvdDZtCl0kvy1aZNtMleBtm06sFoARoyw
+qY1nnhk6icTdfvvB+efDkCE24KM83sNbb9m+so4dYfp0uO8+a2Xs21fn64lI/kmmQNsT+Kycjy8C
+9qhenPxTUGD7eiZODJ0kf82ebe03KtC2LZGwPSUrVoROIqF89ZUdANyrF9SuHTqNZINBg6w4Gzny
+px/33jpIDj3Uhop89RU88YTtc73sMqhXL0hcEZHgkinQlgHty/n4QYBetlVRx47QvLnaHEOKInuh
+2aFD6CTxl0jYbRSFzSHh3HMP1K0Ll14aOolkixYt4KqrbMjH8uW29/qJJ6xluuTMsuefh/fftzPN
+dBaliOS7ZAq08cBo59yvnHM1i9+OBu4CnkxtvNxXo4atok2YkL4DPWXrJk+24kxXa7dtr71g113V
+5pivfvjBWs8uucQOLheprH797Pbss63t8ZxzYPfdbZLxu+9C9+7azygiUiKZAm0gMBn4N7Cu+O1V
+4D9oD1pSCgrg0081vjwUDQipPOe0Dy2fPfwwfP+9tTeKVEXTpnD99fD663DIITBjhg0BOfzw0MlE
+ROInmTH7G733ZwL7A+cApwF7e+8v9N5vTHXAfHDMMVC/vtocQ1ixAubP1/lnVZFIwJQpGmyTbzZv
+tj1EZ55pR1KIVFX//rBsGfzP/6ilXERka5JZQQPAe/+J9/7p4oOqF6UyVL6pXx+OPVYFWgglB1Rr
+Ba3yEglYu9aGq0j+ePZZ+OwzO49KJBnOaVS+iEhlJLUV1zm3O9ADm9pYp/TnvPfXpSBX3unRw6ZW
+rVgBTZqETpM/ogh23hlatgydJHt07Ah16libY6dOodNIJngPd94JRx9t//1FREQkfZI5qPoYYB5w
+BdAH+BVwAXAhcHBK0+WR7t2hqMjORJPMKdl/ps3plVe3ru0h0T60/PHuuzB1qp1JJSIiIumVTIvj
+MKDQe38gsB44HWgBvAU8ncJseaV5c+jcWW2OmVRUZC2Oam+sum7dVKDlk8JCOOAAO0hYRERE0iuZ
+Aq0N8EjxP28G6nvvfwBuAq5PVbB81KMHvPwybNSolYyYO9cm0qlAq7pEAj7/HBYvDp1E0m3ePDsG
+pG9frTSLiIhkQjIF2hqgbvE/fwXsXepz2v5bDQUFsHo1vPVW6CT5IYrsBWfnzqGTZJ9u3ex20qSw
+OST9Royws+/OPjt0EhERkfyQTIEWAYcW//OLwHDn3I3AQ8WfkyS1bw8tWqjNMVOiCNq1g4YNQyfJ
+Ps2b22AVtTnmtmXL4JFH4JprbO+hiIiIpF8yBdp12EHVAIOwA6vPBBYCF6UmVn5yzlbRnnvOpqZJ
+eumA6urRgdW57957oWZNmzArIiIimVGlAs05VxPYHfgcwHu/xnt/ufe+vff+9Oqch+acu8o595lz
+bp1zLnLOVdh45pyr5Zy7yTn3afH9ZzrnTihzn0HOuaIybx+VuU9d59wY59xy59xq59w/nHPNkv0e
+UqFHD1i4ED78MGSK3Ld6tf07VoGWvEQCZsyAdetCJ5F0WLsWxoyBiy6CnXYKnUZERCR/VKlA895v
+AV4FdkxlCOfcmcBwbEWuAzALeMU5V9GetiHAJcBV2NCSccCzzrmDytzvQ2AXYNfit8PKfH4U0B2b
+RHkEsBvwv9X9fqrjqKOgQQO1Oabb1Km2SqkCLXmJBGzeDNOmhU4i6fDII7ByJVx7begkIiIi+SWZ
+FscPgVYpztEbGOe9f8R7Pxe4HFiLna1Wnj8AQ7z3r3jvF3rvx2L74fqUud9m7/033vtlxW8rSz7h
+nNuh+PF7e+/f8t7PxM5zO9Q51yXF31+l1a0Lxx+vAi3dogh22AH23z90kuzVrp1dTFCbY+7ZssWG
+g5x+ug5xFxERybRkCrQBQKFz7hTnXHPn3A6l36r6YM652kAnbC8bAN57D7wOdKvgy+oCG8p8bB0/
+XyFr7Zz70jm3wDn3mHOuRanPdQJqlXneeVj7ZkXPmxE9etj5XEuXhkyR26IIunaFGsn8HyAA1Kpl
+/w5VoOWe556D+fOhT9lLXiIiIpJ2ybw8fRE4CJgALAa+LX77rvi2qpoCNYGy5chSrC2xPK8A1znn
+9nHmOOA0oHmp+0TA+cAJ2IpcS+Ad59z2xZ/fFdjovf++Cs+bESefbLcvvBAyRe7yXgNCUqVkUIiG
+2uSWwkI4/HArwEVERCSzaiXxNb9KeYryOaCil329gPuBuUARsAAb839ByR2896+Uuv+HzrkpwCLg
+DODhJJ83I3be2c6Zeu45uLCiJk9J2mefwTffqEBLhUQCbr0VPv0UWrcOnUZSYdIkmDgR/vWv0ElE
+RETyU5ULNO99qo9RXg5swYZ5lNaMn6+qlWRYDpzmnKsDNPHef+Wcux34rKIn8d6vcs59AuxT/KGv
+gTrOuR3KrKJV+LwlevfuTaNGjX7ysbPOOouzzjpra19WJQUF9sJ3/XqoVy9lDyvY6hlodSAVSorc
+995TgZYrhg+HffeFU04JnURERCQ+xo8fz/jx43/ysVWrVqXluZyvYm+Sc+6IrX3ee/92lUM4FwGT
+vfe9it932F6w0d77Oyvx9bWBj4AnvfcDK7hPA2wFbZD3/p7i/XLfAL/33j9bfJ99sVW5X3rvp5Tz
+GB2B6dOnT6djx45V/Tar5KOPoG1ba3MsaXmU1LjmGnj5Zfjkk9BJckO7dnDooTBuXOgkUl0LFlih
+PXYsXHpp6DQiIiLxNmPGDDp16gTQyXs/I1WPm0yL45vlfKx0lVczicccAfzdOTcdmIJNddwO+BuA
+c+4RYLH3vn/x+12AXwDvY+eyDcJaE/+/mHPO3Qk8hxVlvwBuATYD4wG899875x4ERjjnvgVWA6OB
+ieUVZ5nWpg20amVtjirQUkv7z1JLB1bnjpEjoWlTOPfc0ElERETyVzJDQnYs89YMOBGYChyfTAjv
+/VPYiPzBwEygPXCC9/6b4rvszk8Hd9QDbgPmYOeWfQEcVqZVcXfgCWxF7ElsteyX3vsVpe7TG3ge
++AdWeC7BzkQLzjlrc3z+eQ1gSKV162DmTBVoqZRIwJw58N13oZNIdaxYAQ89BD17Qv36odOIiIjk
+r2T2oJXXbPmac24jthLWKZkg3vt7gXsr+NzRZd5/G2i7jcfb5oYw7/0G4Orit9jp0QPuugvefx86
+dAidJjfMnGmHK6tAS51Ewi4iTJ4MJ5wQOo0k67777L/jlVeGTiIiIpLfUnkK1FJgvxQ+Xt47/HBo
+1AgmTAidJHdEka0OHHhg6CS5o3VraNJEbY7ZbP16uPtuuOACa3EUERGRcKpcoDnn2pd5O8g5dyJw
+HzAr9RHzV+3acOKJtg9NUiOK4JBD7N+tpIZz2oeW7R57zI6e6N07dBIRERFJZgXtfWyf2Pul/vlF
+oC5wUeqiCdg+tOnT4csvQyfJDRoQkh6JhLU4btkSOolUVVERjBgBp56qoxJERETiIJkCrSXQqvi2
+JbAnsJ33PuG9n5vKcAInnQQ1a9qwEKmeL7+EL75QgZYOiQSsXm3DQiS7vPACfPwx9O0bOomIiIhA
+EgWa935RmbcvvPfr0xFOYKed4LDD1OaYCpMn260KtNQ75BCoVUttjtmmqAgGDoQjjrAiW0RERMJL
+Zg/aaOfcNeV8vKdzblRqYklpBQXw73/DmjWhk2S3KIIWLWC33UInyT3bbWeTRlWgZZennoJZs2DY
+sNBJREREpEQyLY6nAxPL+fh7wG+rF0fK06OHTVl7/fXQSbKb9p+llwaFZJdNm2z17JRTtHomIiIS
+J8kUaE2A8s5C+x7QgOY0aN0a9ttPbY7VsWkTTJumAi2dEglYsACWLg2dRCrjoYfsv9eQIaGTiIiI
+SGnJFGifAieW8/GTgP9WL45UpKDABoUUFYVOkp0++ADWrVOBlk4lqzCTJoXNIdu2bh0MHgxnnw3t
+24dOIyIiIqUlU6CNAO5wzt3inDuy+G0wcDswMrXxpERBga1MTJsWOkl2mjzZzj7r0CF0kty1++62
+x09tjvF3zz2wbBncckvoJCIiIlJWrap+gff+IedcXeBGYGDxhxcCV3jvH0lhNiklkbCJjhMmQJcu
+odNknyiCgw+G+vVDJ8lt2ocWf999Z0NBLrkE9t47dBoREREpK5kVNLz393nvdwd2AXbw3rdScZZe
+tWrBySdrH1qyNCAkMxIJW+XdsCF0EqlIYaENHRo4cNv3FRERkcxLZsx+S+dcawDv/Tfe+x+KP97a
+ObdXauNJaQUFMHs2LFoUOkl2WbECPvkEunYNnST3detmxdnMmaGTSHmWLoVRo6BXL2jePHQaERER
+KU8yK2h/A8obyty1+HOSJiecYPuotIpWNVOm2K1W0NKvpI1UbY7xNGSI/Q75859DJxEREZGKJFOg
+daD8c9Ai4ODqxZGtadQIjjxSBVpVRRE0bQqtWoVOkvtq14bOnVWgxdHChTB2rBVnO+4YOo2IiIhU
+JJkCzQMNy/l4I6Bm9eLIthQUwJtvwurVoZNkj5L9Z86FTpIfEgmYOBG8D51EShs0yAYNXXNN6CQi
+IiKyNckUaG8D/Zxz/1+MFf9zP+DdVAWT8hUUwMaN8OqroZNkh6IiG7Gv9sbMSSTg66+1VzJO5syB
+Rx+Fm26C7bcPnUZERES2JpkC7XrgaGCec+5h59zDwDzgSOBPqQwnP9eyJbRrZ+P2ZdvmzYNVq1Sg
+ZVK3bnarNsf4GDAA9toLLr44dBIRERHZlioXaN77j4D2wFNAM6zd8RFg39RGk4oUFMCLL8KWLaGT
+xF8UWWtj586hk+SPpk1h331VoMXF5Mnwz3/C4MFQp07oNCIiIrItyZ6DtsR739973x24EPgaeBmY
+lcpwUr6CAli+3IoP2boogrZtYYcdQifJLzqwOh68h379bNX9rLNCpxEREZHKSKpAA3DOHeGc+xuw
+BOgLvAGokSwDunSBZs3U5lgZOqA6jEQCZs2CH34InSS/vf46vPEGDB0KNTXCSUREJCtUqUBzzjV3
+zt3gnJsPPA2sBuoCp3rvb/DeT01HSPmpmjWhe3eN29+W1avhww9VoIWQSNiAlpIz6CTzvIf+/W1P
+4CmnhE4jIiIilVXpAs05NwGYi+0/uxbYzXt/dbqCydYVFMDHH8OCBaGTxNe0aVYkqEDLvDZt7Nw+
+tTmG88wz9v/AsGE6YkJERCSbVGUF7WTgQWCQ9/4F771GVAR03HG24V+raBWLItt71qZN6CT5p0YN
+WzQOu+MAACAASURBVLlRgRbG5s1w441wwgl2uL2IiIhkj6oUaIdjExunOecmO+d6Oud2TlMu2YYG
+DeCYY7QPbWuiyPbr1Uh6p6VURyIBkybZKqZk1iOP2BETQ4eGTiIiIiJVVemXrt77Sd77S4DmwDjg
+98CXxY9xnHOuYXoiSkUKCuCdd+C770IniR/vNSAktETCfjbnzg2dJL+sXw833wxnnAEdO4ZOIyIi
+IlWVzDloa733D3nvDwMOBIYDNwDLivepSYaccoq1Mr38cugk8bNwISxbpgItpJLVS7U5ZtbYsbBk
+Cdx6a+gkIiIikoxqNX957+d57/8M7A7olJ0Ma9ECOnRQm2N5Ss6I69o1bI581rAhtG+vAi2TVq+G
+IUPgggvssHARERHJPinZneO93+K9/6f3vkcqHk8qr6AAXnoJNm0KnSReogj22QeaNg2dJL/pwOrM
+GjHCirRBg0InERERkWRpfEKWKyiwfT4TJ4ZOEi/afxYPiYQNq1i+PHSS3Ld8OQwfDj17wu67h04j
+IiIiyVKBluU6doTmzTVuv7T162HmTBVocZBI2G1Jy6mkz7BhdnvDDWFziIiISPWoQMtyNWrYKtqE
+CTa5UKw427RJBVoc7LUX7LqrjduX9PniCxgzBvr2VVuviIhItlOBlgMKCuDTT62VTGy1pl49G1Ah
+YTmnfWiZcMstdih7796hk4iIiEh1qUDLAcccA/Xrq82xRBTBIYdA7dqhkwhYgTZligbZpMu8efDw
+w3DjjTY5U0RERLKbCrQcUL8+HHecxu2X0ICQeEkkYO1amD07dJLcNHCgDQW5/PLQSURERCQVVKDl
+iIICayNbsSJ0krCWLIHPP1eBFicdO0KdOmpzTIfp0+Hpp+Hmm6Fu3dBpREREJBVUoOWI7t2hqAhe
+fDF0krAmT7ZbFWjxUbeutZyqQEu9/v2hTRs499zQSURERCRVVKDliObNoXNn7UOLImv3+sUvQieR
+0jQoJPXefBNefRVuuw1q1QqdRkRERFJFBVoO6dEDXn4ZNm4MnSQc7T+Lp0TCWk8XLw6dJDd4D/36
+2UWZ3/wmdBoRERFJJRVoOaSgAFavhrfeCp0kjM2bYdo0FWhx1K2b3eo8tNSYMMEuRgwdakcZiIiI
+SO5QgZZD2reHFi3yt83xww9tWqAKtPjZdVdo2VJtjqmwZYuN1D/mGDj22NBpREREJNVUoOUQ56zN
+ccIEa4HKN1Fke3E6dgydRMqjfWip8cQTMGeOrZ6JiIhI7lGBlmMKCmDRIltNyjdRBAcfbOfCSfwk
+EjBjBqxbFzpJ9tq4EW66yfaddekSOo2IiIikgwq0HHPUUdCgQX62OWpASLwlEj/uE5Tk3H+/DVu5
+7bbQSURERCRdVKDlmLp14fjj869AW7kS5s2Drl1DJ5GKtGtnFw/U5picNWusMDvvPDjggNBpRERE
+JF1UoOWgHj3swOalS0MnyZwpU+xWK2jxVauWFdAq0JJz113w7bdw882hk4iIiEg6qUDLQSefbLcv
+vBA2RyZFETRpAnvvHTqJbE3JoJB8HGJTHStXwh13wOWXw557hk4jIiIi6aQCLQftvLOdO5VPbY4l
++890JlS8JRKwfDl8+mnoJNnlL3+x/Xs33hg6iYiIiKSbCrQc1aMHvPoqrF8fOkn6FRVZS6faG+Ov
+5L+R2hwrb8kSGD0arrsOmjULnUZERETSTQVajioosEOb//Of0EnS75NP4LvvVKBlg8aNoW1bFWhV
+ceutsN120KdP6CQiIiKSCSrQclSbNtCqVX60OUaRtTZ27hw6iVSGDqyuvE8/hb/+Ffr1g0aNQqcR
+ERGRTFCBlqOcs1W0557L/YEMUWRjx/UCNjskEjBnjq16/l97dx5lZ1Xme/z7ZCAkRObZIJOgyBAI
+EDpHBhc0N0wnLul2QBwuLnRxL14RVDSMMuNFcR7QVhGlo93YyqhAhIYrnRMgiWFKuAQi0yVMEoYA
+gST7/rFPSVHUXOec9wzfz1q1Tuo97/C8VZuifrX3u7f6d8YZsNlmcPzxRVciSZIaxYDWxmbMgMcf
+hwULiq6kvlygurWUSvmPBnPnFl1Jc1u4EGbNgjPPhPHji65GkiQ1igGtje23X+5Vaudhji+9BHff
+bUBrJTvskJdEcJhj/049NX+tjjmm6EokSVIjGdDa2NixcMgh7R3Q7rwzz+JoQGsdET6HNpA//zmv
+Y3jOOXmBb0mS1DkMaG1uxgyYNy8PdWxHlQq87W15UhS1jlIpf+9Wry66kuaTUp4UZPfd4YMfLLoa
+SZLUaAa0NnfooTB6NFxzTdGV1EelAlOn5ntU6yiV8vDUe+4pupLm84c/5B60Cy6AUf6EliSp4/i/
+/za3wQaw777tOcwxJScIaVV77ZWH7jnM8c3WrIFTToH994fp04uuRpIkFcGA1gHKZZg9G1asKLqS
+2nr4YXjySQNaK5owAfbYw4DW029+k2dvvOCC/KyeJEnqPAa0DjBjBqxcmUNaO6lU8us++xRbh4bH
+iULe7PXX4fTT4Ygj8tdGkiR1JgNaB9hhB3jXu9pvmGOlAttvD5tsUnQlGo5SCR56KPeCCn72s/z1
+OO+8oiuRJElFMqB1iHI5TxSyZk3RldSOz5+1tq5eojlziq2jGbz8Mpx9Nnz0o7DbbkVXI0mSimRA
+6xAzZuSeijvuKLqS2li5EhYsMKC1skmTYKutHOYI8L3vwVNPwVlnFV2JJEkqmgGtQ0ybBhtu2D7D
+HBcsgNdeM6C1Op9Dg+XL4cIL4dOfzkN2JUlSZzOgdYgxY+Cww9onoFUqsPbaDgdrdaUS3Hln7hHt
+VF//Orz6ap4gRJIkyYDWQcpluOuuPD19q6tUYM89Ya21iq5EI1EqvTFctRM9+SR885twwgmwxRZF
+VyNJkpqBAa2DTJ8OY8e2Ry+aE4S0h8mTYfz4zh3meO65+Y8MJ59cdCWSJKlZGNA6yHrrwQEHtH5A
+e+KJ3AtoQGt9Y8fC1KmdGdCWLoVLLsnhbIMNiq5GkiQ1CwNahymX4eab4YUXiq5k+ObOza8GtPYw
+bRrcdhukVHQljfXVr8JGG8HnPld0JZIkqZkY0DpMuQyvvw433FB0JcNXqcDb356naVfrK5Vg2bL2
+eDZysO65B375yzwxyDrrFF2NJElqJga0DrPttrDLLq09zHHuXHvP2sm0afm1k4Y5nnYabLMNHHts
+0ZVIkqRmY0DrQOUyXHstrF5ddCVDt2pVXmzbgNY+Nt4YdtyxcwJapQJXXglnn+0spJIk6a0MaB2o
+XIZnn4U5c4quZOjuvRdWrDCgtZtOWbA6JTjlFNh1VzjqqKKrkSRJzciA1oGmToVNN23NYY6VSl50
+e8qUoitRLZVKsHAhvPRS0ZXU1+zZeZKe886D0aOLrkaSJDUjA1oHGj0aDj+8dQPa5MkwYULRlaiW
+SiVYswZuv73oSuonJZg5Mz9zd8QRRVcjSZKalQGtQ5XLsGgRLFlSdCVD4wLV7WmnnfI6fe08zPG3
+v4V58+CCCyCi6GokSVKzMqB1qIMPhnHjWqsX7bnnYPFi2GefoitRrY0alXuW2jWgrVqVZ2485JC8
+WLwkSVJfDGgdauJEOPDA1gpoXcPf7EFrT6VSnrhmzZqiK6m9yy6D+++H888vuhJJktTsDGgdrFyG
+W2/NPVOtoFKBDTeEd76z6EpUD6USLF+ee0nbyauvwplnwoc+BHvsUXQ1kiSp2RnQOtgRR+S10P74
+x6IrGZyu5898fqc9TZ2ahzq22zDHH/4QnngCzjmn6EokSVIrMKB1sK22yn/Rb4VhjmvWwNy5Dm9s
+Z297G+y2W3sFtBdfzMMaP/WpvBi3JEnSQAxoHa5chj/8AV5/vehK+vfAA3kopgGtvbXbgtUXX5xD
+2hlnFF2JJElqFQa0Dlcu5+d+brut6Er6V6nkoY1TpxZdieqpVMqTaTzzTNGVjNzTT8PXvw6f/SxM
+mlR0NZIkqVUY0DrclCmw5ZZw1VVFV9K/SuWNtbLUvkql/FqpFFtHLXStd/aVrxRdiSRJaiUGtA43
+alSeLOTqqyGloqvpmwtUd4ZttoHNN2/9YY6PPgo/+AF86Uuw8cZFVyNJklqJAU2Uy7BkSR5a1oxW
+rIC77jKgdYKI9ngO7ayzYN114fOfL7oSSZLUapomoEXE8RGxNCJeiYhKROzdz75jIuKMiFhS3X9B
+REzvZ/+ZEbEmIi7usf0/q9u7PlZHxA9qeV+t4KCDYPz45h3meOedeRZHA1pnKJXyouTNPnFNXxYv
+hp//HE49Nc9MKUmSNBRNEdAi4sPAN4AzgT2AhcD1EdHX4KDzgE8DxwM7AZcAv4uIyb2ce+/qvgt7
+OU8CfgxsBmwObAGcPKKbaUHjx8PBBzfvdPuVCkycCO95T9GVqBFKJXjlFVjY23+xLeD00/OkIMcd
+V3QlkiSpFTVFQANOBC5JKV2WUloMHAe8DHyqj/0/BpyXUro+pfTXlNKPgOuAL3TfKSImAr8CjgWW
+93Gul1NKT6eUnqp+vFSLG2o15XIeVtaMs+dVKnn2xtGji65EjTBlCqy1VmsOc5w3D664Ig9xHDeu
+6GokSVIrKjygRcRYYE/gT13bUkoJmA1M6+OwccDKHtteAfbtse37wNUppZv6KeHoiHg6Iu6OiPMj
+YvyQbqBNHH54HkZ43XVFV/JmKTlBSKcZNw722qs1A9opp+TZRj/+8aIrkSRJrarwgAZsDIwGnuyx
+/UnysMPeXA+cFBHvjOxg4EjyEEUAIuIjwO7AzH6ufTm5N+59wPnAx4FfDuMeWt4WW+ReqmYb5vjI
+I7BsmQGt05RKMGdO0VUMzc03ww03wLnn2tsrSZKGrxkCWl+C/IxYb04AHgAWk3vSvgP8DFgNEBFb
+Ad8CPpZS6nOqgZTSv6SUbkwp3ZtSmgV8AvhARGxbu9toHeUyXH89vPZa0ZW8oWs9rH32KbYONVap
+lMP5Y48VXcngpAQzZ8Lee8MHPlB0NZIkqZWNKboA4BlysNqsx/ZNeWuvGgAppWeAIyNiLWCjlNIT
+EXEhsLS6yxRgE2BeRER122hg/4j4LDCuOoyyp7nkYPjObud6ixNPPJH1eqyYfNRRR3HUUUf1fZct
+oFzOExzcckueNKQZVCqw3Xaw6aZFV6JGmlYd3DxnDnzwg8XWMhhXXQVz58Ls2XmpAEmS1F5mzZrF
+rFmz3rTt+eefr8u1ovec0lgRUQHmppROqH4ewCPAd1JKFw3i+LHAfcCvU0qnR8Q6wNY9drsUWARc
+mFJa1Md53gvcCkxOKd3Ty/tTgHnz5s1jypQpg76/VpESbL01vP/98N3vFl1NNm1aDmiXX150JWq0
+7beHGTPgm98supL+rV4NkyfnBbZnzy66GkmS1Cjz589nzz33BNgzpTS/VudtliGOFwOfiYhPRMS7
+gR8BE8ihioi4LCLO79o5IqZGxAciYtuI2A/4A7nn6yKAlNKKlNJ93T+AFcCzXeEsIraLiNMiYkpE
+bB0RM4BfALf0Fs46QUT+hfjqq3NYK9rKlTB/vs+fdapWWbD68svh3nvh/PMH3leSJGkgTRHQUkr/
+Rp4i/2xgAbAbMD2l9HR1l0m8ecKQtYFzgXuB3wKPAvumlF7o7zI9Pn8N+EfyhCOLyOHu34EZI7qZ
+Flcuw8MPwz1NEFH/8pf8PJwBrTOVSjmgv/JK0ZX07bXX4Mwz83NnU6cWXY0kSWoHzfAMGgAppR8A
+P+jjvQN7fH4rsPMQz9/zHI+RZ29UN+97X14U+qqrYNddi62lUslTrk9+y/Lj6gTTpsGqVXDnnbDf
+fkVX07sf/zhPZnLttUVXIkmS2kVT9KCpeYwbB9OnN8d0+5UK7LlnXrRYnWeXXfIfC5p1mONLL8E5
+58AnPgHveU/R1UiSpHZhQNNblMtw++3wZK9zaDaOC1R3tjFj8vIKzRrQvv1tWL4cvvrVoiuRJEnt
+xICmtzjssPxa5LCtZcvgr381oHW6rolCmmHSmu7+9je46CI47rg886kkSVKtGND0Fptskp//ueqq
+4mqYOze/GtA6W6kEzzwDS5YUXcmbfe1r+fm4U08tuhJJktRuDGjq1YwZcOON8OqrxVx/7lzYckuY
+NKmY66s5dAX0Zhrm+Pjj8J3vwEknuYC6JEmqPQOaelUuw8svw003FXP9rufPIoq5vprD+uvDzjs3
+V0A75xyYMAG+8IWiK5EkSe3IgKZe7bQTbLddMcMcV6/Ok5Q4vFHQXAtWL1kCP/0pzJwJ661XdDWS
+JKkdGdDUq4g8zPGaaxo/QcO998KKFQY0ZaVSbhPLlxddCZxxBmy2GRx/fNGVSJKkdmVAU5/K5fy8
+zYIFjb1upQKjR+c10KRSKf+RoGvimKL85S8waxaceSaMH19sLZIkqX0Z0NSn/fbLw7gavWh1pQKT
+J+fnfKQddoCNNip+mOOpp+Zajjmm2DokSVJ7M6CpT2PHwiGHNP45NBeoVncRxT+H9uc/w3XX5QlC
+xowprg5JktT+DGjq14wZMH9+HurYCMuXw6JFsM8+jbmeWkOplIP76tWNv3ZK8JWvwB57wAc/2Pjr
+S5KkzmJAU78OPTQ/D3bNNY253u2351d70NRdqQQvvQT33NP4a193Hdx2G5x/PozyJ6YkSaozf91Q
+vzbYAPbdt3HDHCuVfM0ddmjM9dQa9torDy1s9DDHNWvys2f77w/Tpzf22pIkqTMZ0DSgGTPgT3/K
+U9/XmwtUqzcTJuQhho0OaL/5DSxcCBdcYJuUJEmNYUDTgMplWLkSZs+u73VScoIQ9a3RE4W8/jqc
+fnpu/6VS464rSZI6mwFNA9phB3jXu+o/3f4DD8BzzxnQ1LtSCR56CJYta8z1fvrTfL3zzmvM9SRJ
+ksCApkEql/NEIWvW1O8alUp+nTq1ftdQ6+rqxZozp/7XevllOPts+OhHYddd6389SZKkLgY0DcqM
+GfDkk3DHHfW7RqUCO+0E669fv2uodU2aBFtt1Zhhjt/7Hjz9NJx1Vv2vJUmS1J0BTYMybRpsuGF9
+hzn6/JkG0ojn0JYvhwsvhM98Brbfvr7XkiRJ6smApkEZMwYOO6x+0+2vWAF33WVAU/9KJbjzzjxp
+Tb1cdBG8+iqcdlr9riFJktQXA5oGbcYMuPtuePjh2p973jxYvdqApv6VSvDaazB/fn3Ov2wZfOtb
+cMIJsMUW9bmGJElSfwxoGrTp02Hs2PoMc6xUYJ11YOeda39utY/Jk2H8+PpNFHLeebDWWnDyyfU5
+vyRJ0kAMaBq0ddeFAw6oX0CbOhVGj679udU+xo7N7aQez6EtXQqXXAJf/jJssEHtzy9JkjQYBjQN
+SbkMN98ML7xQu3OmlHtEHN6owSiV4LbbcruppTPPhI02gs99rrbnlSRJGgoDmoakXIbXX4cbbqjd
+OR99ND/7Y0DTYJRKub3U8lnIe+6BX/0KTj8dJkyo3XklSZKGyoCmIdl2W9hll9oOc+xaoHqffWp3
+TrWvriBfy2GOp50G22wDxx5bu3NKkiQNhwFNQ1Yuw7XX5lkXa6FSycFvs81qcz61t403hh13rF1A
+q1TgyivhnHPyBCGSJElFMqBpyGbMgGefrd1Mei5QraGq1YLVKcHMmbDrrnDUUSM/nyRJ0kgZ0DRk
+U6fCppvWZpjjypV5TSsDmoaiVIKFC+Gll0Z2nhtvhP/8zzy9/ih/GkqSpCbgryQaslGj4PDD4aqr
+Rn6uhQtzSDOgaShKJVizBm6/ffjnSAlOOQWmTYMjjqhdbZIkSSNhQNOwlMuweDEsWTKy81QqMG4c
+7L57bepSZ9hpJ1hvvZENc/ztb2HePLjwQoioXW2SJEkjYUDTsBx8cA5WIx3mWKnAlClOzqChGTUq
+93wNN6CtWpVnbjzkENh//9rWJkmSNBIGNA3LxIlw4IG1CWgOb9RwlEp5opo1a4Z+7C9+AfffD+ef
+X/u6JEmSRsKApmErl+HWW+G554Z3/FNPwdKlBjQNT6kEy5fnobZD8eqr8NWvwoc+BHvsUZfSJEmS
+hs2ApmErl/NaaH/84/COnzs3vxrQNBxTp+ahjkMd5vjDH8ITT+R1zyRJkpqNAU3DNmlS7oEY7jDH
+SgW22AK22qq2dakzvO1tsNtuQwtoL7yQp9T/1KfyYteSJEnNxoCmESmX4brr4PXXh35s1/NnzqCn
+4RrqgtUXX5zXTjvjjPrVJEmSNBIGNI1IuQzPPw9//vPQjlu9Oq9h5fBGjUSplCf7eOaZgfd9+mn4
+xjfgs5/Nvb+SJEnNyICmEZkyBbbccujDHO+7L/dkGNA0EqVSfq1UBt73ggvyM2szZ9a3JkmSpJEw
+oGlERo2CI46Aq66ClAZ/XKUCo0fDnnvWrza1v222gc03H3iY4yOPwPe/D1/8Imy0UUNKkyRJGhYD
+mkasXIYHHxzadOeVSp7gYZ116leX2l/E4J5DO+ssWG89+PznG1OXJEnScBnQNGIHHQTjxw9tmKML
+VKtWSqX8PGNfE9UsXgyXXgqnnppnfpQkSWpmBjSN2PjxcPDBgw9oy5fnZ9D22ae+dakzlErwyiuw
+cGHv759+ep4U5LjjGluXJEnScBjQVBPlch5mNpjZ9O64I7/ag6ZamDIF1lqr92GOd94JV1yRhziO
+G9f42iRJkobKgKaaOPxwWLMmr4k2kEoFNtgAdtih/nWp/Y0bB3vt1XtAO+UU2Gkn+PjHG1+XJEnS
+cBjQVBNbbAFTpw5umGOlkoc3jrL1qUZ6myjk5pvhxhvh3HPzjKGSJEmtwF+RVTPlMlx/Paxc2fc+
+KTlBiGqvVIJHH80fkNvZzJmw997wgQ8UW5skSdJQGNBUM+UyvPgi3HJL3/ssWQJ/+5sBTbU1bVp+
+nTMnv155JcydmxenjiiuLkmSpKEyoKlmdtsN3vGO/oc5Vir5derUxtSkzrD55rDddnmY4+rVeUr9
+gw7KH5IkSa3EgKaaici9aFdfnYeY9aZSgXe/O08SItVS13Nol1+el3E4//yiK5IkSRo6A5pqqlyG
+hx+Gu+/u/X2fP1O9lEqwYEFe9+zII+2llSRJrcmAppp63/tg4sTehzm+/HJeTNiApnoolWDVKnjs
+sTxzoyRJUisyoKmmxo2D6dN7D2jz5uXngwxoqodddoH114dPfCKvfSZJktSKxhRdgNpPuQzHHAPL
+luXJG7pUKrDOOrDzzsXVpvY1enSexfEd7yi6EkmSpOGzB001d9hh+fXaa9+8vVLJ61KN8c8CqpN3
+vxsmTCi6CkmSpOEzoKnmNtkkPw/UfZhjSrl3w+GNkiRJUt8MaKqLchluvBFeeSV//thj8MQTBjRJ
+kiSpPwY01UW5nGdtvOmm/HnXAtX77FNcTZIkSVKzM6CpLnbaCbbb7o1hjpUKbLPNmycNkSRJkvRm
+BjTVRQTMmAHXXJOfP3OBakmSJGlgBjTVTbkMjz8Oc+fmNdAMaJIkSVL/DGiqm/32g/XWg3POgZUr
+DWiSJEnSQAxoqpuxY+HQQ+G662CttWD33YuuSJIkSWpuBjTVVbmcX6dMgXHjiq1FkiRJanYGNNXV
+oYfC6NFOry9JkiQNxpiiC1B722AD+M1vYK+9iq5EkiRJan4GNNXdP/1T0RVIkiRJrcEhjpIkSZLU
+JAxokiRJktQkDGiSJEmS1CQMaJIkSZLUJAxokiRJktQkDGiSJEmS1CQMaJIkSZLUJAxokiRJktQk
+DGiSJEmS1CQMaJIkSZLUJAxokiRJktQkDGiSJEmS1CQMaJIkSZLUJAxokiRJktQkDGiSJEmS1CQM
+aJIkSZLUJAxokiRJktQkmiagRcTxEbE0Il6JiEpE7N3PvmMi4oyIWFLdf0FETO9n/5kRsSYiLu6x
+fVxEfD8inomIFyPiiojYtJb3JUmSJEmD1RQBLSI+DHwDOBPYA1gIXB8RG/dxyHnAp4HjgZ2AS4Df
+RcTkXs69d3Xfhb2c51vA4cA/AfsDWwK/HdHNSDUya9asoktQh7CtqVFsa2oU25paWVMENOBE4JKU
+0mUppcXAccDLwKf62P9jwHkppetTSn9NKf0IuA74QvedImIi8CvgWGB5j/fWrZ7/xJTSLSmlBcAx
+wHsjYmoN700aFv/nokaxralRbGtqFNuaWlnhAS0ixgJ7An/q2pZSSsBsYFofh40DVvbY9gqwb49t
+3weuTind1Ms59gTG9Lju/cAj/VxXkiRJkupmTNEFABsDo4Ene2x/EnhXH8dcD5wUEf8HeBD4R+BI
+ugXOiPgIsDuwVx/n2Bx4LaX0Qi/X3XwoNyBJkiRJtVB4D1o/Akh9vHcC8ACwmNyT9h3gZ8BqgIjY
+ivx82cdSSq/X8LqSJEmSVDfN0IP2DDlYbdZj+6a8tVcNgJTSM8CREbEWsFFK6YmIuBBYWt1lCrAJ
+MC8iorptNLB/RHyWPERyGbBWRKzboxetz+sCawMsWrRoKPcnDcvzzz/P/Pnziy5DHcC2pkaxralR
+bGtqhG6ZYO1anjfy417FiogKMDeldEL18yA/C/adlNJFgzh+LHAf8OuU0ukRsQ6wdY/dLgUWARem
+lBZVJwl5GvhISul31fPsSO6V+4eU0u29XOejwOXDvE1JkiRJ7efolNK/1upkzdCDBnAx8IuImAfc
+Tp7VcQI5VBERlwGPpZROqX4+FXg78BdgEnl6/gAuAkgprSAHtr+LiBXAsymlRdV9XoiInwIXR8Rz
+wIvkoZK39RbOqq4Hjgb+CrxaixuXJEmS1JLWBrYhZ4SaaYqAllL6t+qaZ2eThzr+BZieUnq6ussk
+YFW3Q9YGzgW2BV4CriU/b9Zzwo83XaaXbSeSh1deQR72+Efy2mp91fksULN0LEmSJKml/VetT9gU
+QxwlSZIkSc09i6MkSZIkdRQDmiRJkiQ1CQNaDxFxfEQsjYhXIqISEXsPsP8HI2JRdf+FEXFoo2pV
+axtKW4uI90TEFdX910TE5xpZq1rbENvasRFxa0T8rfpx40A/B6UuQ2xrH4iIOyLiuYh4KSIWZdMM
+sAAACh1JREFURMTHGlmvWtdQf1/rdtxHqv8f/Y9616j2MMSfa5+stq/V1dc1EfHyUK9pQOsmIj4M
+fIM8K+QewELg+uoEJr3tP408achPgN2B3wO/j4j3NKZitaqhtjXyrKYPAl8GnmhIkWoLw2hrB5B/
+rr0P+AfgUeCGiNii/tWqlQ2jrT1LnvDrH4BdgZ8DP4+IgxtQrlrYMNpa13Fbk2f8vrXuRaotDLOt
+PQ9s3u2j59JfA1/XSULe0Md6bI+S12P7373s/2tgQkppRrdtc4AFKaX/2aCy1YKG2tZ6HLsU+GZK
+6Tv1r1StbiRtrbr/KOA54PiU0q/qWqxa2kjbWvWYecA1KaUz61epWt1w2lr1Z9ktwM+A/YH1UkpH
+NqhktahhZINPkn9H23Ak17UHraq62PWewJ+6tqWcXmcD0/o4bFr1/e6u72d/abhtTRqyGrW1dYCx
+wN9qXqDaRi3aWkQcBOxI/iVa6tUI2tqZwFMppZ/Xt0K1ixG0tYkR8deIeCQihjWyzoD2ho2B0cCT
+PbY/Se6e7M3mQ9xfguG1NWk4atHWvgY8zlv/GCV1N6y2FhHrRsSLEfEacDXwv1JKN9WvTLWBIbe1
+iHgvcAxwbH1LU5sZzs+1+4FPATOAo8lZ678i4u1DuXBTLFTd5ILeF7mu1f5SF9uOGmVQbS0ivgJ8
+CDggpfRa3atSOxqorb0ITAYmAgcB34yIh1JKPiOkoeq1rUXEROCXwKdTSs81vCq1oz5/rqWUKkDl
+7zvmR58WAZ8h9+IOigHtDc8Aq4HNemzflLcm5y7Lhri/BMNra9JwDLutRcQXgZOBg1JK99anPLWR
+YbW16nChh6qf3lUdCjQTJ3FQ34ba1rYnT9JwdfX5IaiOIKv23L4rpbS0TrWqtY3497WU0qqIWAC8
+cygXdohjVUrpdWAe+S94wN8fBDwI+K8+DpvTff+qg6vbpV4Ns61JQzbcthYRXwJOBaanlBbUu061
+vhr+XBsFjKttdWonw2hri8izhO5O7q2dDFwF3FT996N1LlktqhY/16qT0+zCEGfgtgftzS4GflGd
+Rep24ETy9OaXAkTEZcBjKaVTqvt/G7glIk4CrgWOIj9M+OkG163WM6S2Vn1Q9T3kbvW1gLdHxGTg
+pZTSg40vXy1kqG3tZOBs8s+zRyKi6y+HL6WUVjS4drWWoba1rwB3kpcQGQccDnwMOK7hlavVDLqt
+VYdn39f94IhYTu7AXdTQqtWKhvpz7XTyEMclwPrkkShbA/8ylIsa0LpJKf1bdV2Ds8ndmX8h/wX5
+6eouk4BV3fafExFHAedVPx4A3p9Sug+pH0Nta8CWwALeGPP8xerHLcCBDSlaLWkYbe1/kGdtvKLH
+qc6qnkPq1TDa2jrA96vbXwEWA0enlHq2PelNhtHWpGEZRlvbAPgxeRKR58g9cNNSSouHcl3XQZMk
+SZKkJuEzaJIkSZLUJAxokiRJktQkDGiSJEmS1CQMaJIkSZLUJAxokiRJktQkDGiSJEmS1CQMaJIk
+SZLUJAxokiRJktQkDGiSJEmS1CQMaJKklhQRW0fEmojYrehaWkFE/Dwi/qPoOiRJ/TOgSZKGrEl+
+2X8E2By4p+A6+hQRSyPic0XXIUlqHWOKLkCSpOFIKSXgqSKuHRGjU0qri7i2JKm92YMmSaq5iFgv
+Iv4lIp6KiOcjYnb3oYgRsV1E/D4ilkXEixFxe0Qc1OMcSyNiZkT8NCJeiIiHI+LT3d5/0xDHiDig
++vmBEXFHRKyIiNsiYoce5z0tIp6s1vWTiLggIhb0cy9d5z0kIu6MiFeB9w50DxFxM7A18M3q8au7
+vbdvRNwaES9X7+vbETGhj+vvWD1+xx7bT4qIJdV/j6p+vR+qnnPxQD13vfXuRcSCiDij2+f9fh8l
+SbVnQJMk1cMVwEbAdGAKMB+YHRHrV9+fCFwLHAjsDvwBuCoiJvU4z0nAHdV9fgD8sEdQSb1c+1zg
+RGBPYBXws643IuJo4BTgS9X3HwH+Rx/n6ekC4MvATsBdg7iHI4HHgNPJQzG3qNawfXXffwd2AT4M
+vBf4bm8XTSn9X+BO4Ogebx0F/LL671HAo8A/V+s7CzgvIv55EPfVn4G+j5KkGjOgSZJqKiLeC+wF
+fCiltCCl9GBK6WTgeXKAIKV0V0rpJyml+6rvnwk8BMzocbprU0o/Sik9lFL6GvAM8L7ul+uxfwJO
+SSn9OaW0GLgQKEXEWtX3Pwv8JKV0WUppSUrpHODuQd7a6SmlP6WUlqaUlg90Dyml54DVwEsppadS
+Sl3DMb8C/Cql9N3qfVWAzwOf7FZnT/8KfPTvN51D6hRgVvVaq1JKZ6WU5qeUHk4pzQIuBT40yHt7
+i4jYlwG+j5Kk2jOgSZJqbTLwNuBv1aF/L0bEi8A2wPYAEbFORHw9Iu6LiOeq778beEePc/UMT8uA
+TQe4fvdjnqi+dh3zLnKPXHe3D3RD5OA3r/uGIdxDT5OB/97ja/PH6nvb9nHMr4FtImJq9fOjgXnV
+3rWueo6vDsF8qnrOzwyilv7sxgDfR0lS7TlJiCSp1iYC/w84gLf2cC2vvn4DOAj4AvAg8ArwW6Bn
+D9LrPT5PDPzHxe7HdA1dHNXLti49a+zLih6fD/YeepoIXAJ8u5drP9LbASmlZdVn2j5KDpQfAb7f
+9X5EfAS4iDy0swK8CJwMTH3r2f5uTS/XH9ujzoG+j5KkGjOgSZJqbT75mavVKaVeAwdQAi5NKV0F
+EBETyT0z9XY/ObRc3m3bXsM812Du4TVgdI9t84GdU0pLh3i9y4ELI+LXwHbAb3rUcltK6ZKuDdVn
+3frzNNXn4qr7r8ube/AG832UJNWYQxwlScO1fkRM7vExKaU0m9yL8/uIOLg622IpIs6NiCnVYx8A
+juw6jhw+BtuT1Z/eztF923eBYyPiExHxzog4jTyUb6BJQno772Du4a/A/hGxZURsVN32NWBaRHy3
+euw7I+L9EdHrJCHd/AewHvBD4KaU0pM9atkrIv5bROwQEWcDew9wvpuAj1dnlNyV/Mzaqq43q9/H
+OfT/fZQk1ZgBTZI0XAeQe1m6f3RN0X4ocCt5BsX7yZNcvAPoChUnAc8BtwFXkp/Bmt/j/L2Fpp7b
+Bvr8TdtSSv8KnE8eDjiPPA3+pcCrvRw30HkHcw9nkHvVHqS6ZltK6W7y124H8tdoPvBV4PF+C0jp
+ReBqcqC8vMfbl5AD3K/J4XhDug2B7MMF1etfXf34XbXO7g6j/++jJKnGIq/zKUlSZ4qIG4AnUkqf
+LLoWSZJ8Bk2S1DEiYjxwHHA9eZKMo8gTffxjkXVJktTFHjRJUseIiLXJw/n2AMaRh+2dk1K6stDC
+JEmqMqBJkiRJUpNwkhBJkiRJahIGNEmSJElqEgY0SZIkSWoSBjRJkiRJahIGNEmSJElqEgY0SZIk
+SWoSBjRJkiRJahIGNEmSJElqEgY0SZIkSWoS/x8g+Qm3e28psgAAAABJRU5ErkJggg==
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So, even simplest perceptron can handle this dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>&lt;font size=4 id="conclusions"&gt;<b> 3. Conclusions.Ways to improve results.</b> &lt;/font&gt; <br>
+&lt;font size=3&gt;Conclusions:&lt;/font&gt;</p>
+<figure>
+Exploring:
+<ul><li>Data is balanced</li>
+<li>Data have some useful features, that we can use</li>
+<li>We have nice visualization of data</li>
+<li>Data have some correlations between features.</li>
+</ul></figure>
+<figure>
+Logistic regression:
+<ul><li>Worked well</li>
+<li>Best C value - 0.2</li>
+<li>Result of classification was explored</li>
+</ul></figure>
+<figure>SVM:
+<ul><li>Best default kernels - linear and rbf</li>
+<li>Best parametrized kernel,found by GridSearch - polynomial kernel</li>
+<li>Parametres of svm was explored</li>
+<li>Have some vizualization.</li>
+</ul></figure>
+<figure>Simple perceptron:
+<ul><li>This archaic thing worked</li>
+<li>We even find starting learning rate (which not influence much, cause we adjust rate to epochs)</li>
+</ul></figure>
+<figure>Global:
+<ul><li>Numpy is lifesaver. Really.</li>
+<li>Pandas - as cool, as pandas. 🐼</li>
+<li>Scikit-learn - like a knife. Swiss knife.</li>
+<li>Matplotlib. I thought, it can nothing. I was wrong. Easy in use,good-looking plots. </li>
+</ul></figure><br>
+<font size=3>Ways to improve:</font>
+<figure>Logistic regression:
+<ul><li>This model pretty simple, but have a good result. Nothing to improve, I think. Maybe it a good thing to add a regularization to my implementation of regression.</li>
+</ul></figure>
+<figure>SVM:
+<ul><li>Realize own version, that will be working with big dataset like this in acceptable time(tried do it several times,result was disappointing)</li>
+<li>Search widely in space of parameters (using GridSearch). (And buy some supercomputer, cause this task can fry my laptop)</li>
+<li>Actually, IMHO using svm in this dataset - not the best idea. Simpler models (like logistic regression) work good enough (and fast enough).</li>
+</ul></figure>
+<figure>Simple perceptron:
+<ul><li>Oooh, make more complicated version (or maybe versions, many of them) with backpropagation</li>
+<li>Realize it with other libs,like Theano.</li>
+</ul></figure>
+<figure>Global:
+<ul><li>Learn Theano,TensorFlow,OpenCV,xgboost. Especially Theano and TensorFlow. Okay, OpenCV also is cool.
+</li>
+</ul></figure>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
 </div>
